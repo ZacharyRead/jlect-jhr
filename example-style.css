@@ -1,0 +1,43 @@
+body {
+	font-family: "Meiryo";
+}
+#canvas-table {
+	display: table;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+}
+#canvas-drawbox {
+	display: table-cell;
+	min-width: 231px;
+	vertical-align: top;
+	width: 30%;
+}
+canvas {
+	border: 1px solid #000;
+}
+#handwriting-results {
+	display: table-cell;
+	padding-left: 30px;
+	vertical-align: top;
+	width: 70%;
+}
+h3 {
+    border-bottom: 1px solid #000;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+h3:first-of-type {
+	margin-top: 0;
+}
+.kmatch {
+	background: rgba(255, 255, 255, 0.7) none repeat scroll 0 0;
+	color: #000;
+	cursor: pointer;
+	display: inline-block;
+	width: 25px;
+    text-align: center;
+}
+.kmatch {
+	margin: 0 0 1px 1px;
+}

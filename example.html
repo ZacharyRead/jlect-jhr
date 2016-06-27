@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JLect Japanese Handwriting Recognition Tool (JLect JHR)</title>
+	<meta name="author" content="Zachary Read">
+	<link rel="stylesheet" href="example-style.css">
+</head>
+<body onload="init()">
+	<h1>JLect Japanese Handwriting Recognition Tool (JLect JHR)</h1>
+	<p>This page provides an example of how the JLect JHR library can be integrated onto your site.</p>
+	<h2>Handwritten Kanji Search</h2>
+	<p>Start drawing a Japanese character in the canvas below. The tool will begin outputting matches based on stroke order.</p>
+	<div id="canvas-table">
+		<div id="canvas-drawbox">
+			<div><canvas id="can" width="231" height="231"></canvas></div>
+			<div><input type="button" value="Clear" id="clr" size="23" onclick="erase()"><input type="button" value="Undo" id="undo" size="23" onclick="undo()"></div>
+		</div>
+		<div id="handwriting-results">
+			<h3>Near match:</h3>
+			<div id="guess"></div>
+
+			<h3>Fuzzy match:</h3>
+			<div id="fuzzy"></div>
+
+			<h3>Similarity match:</h3>
+			<div id="similarity"></div>
+		</div>
+	</div>
+
+	<div>
+		<h2>Supplemental data</h2>
+		<div id="angles">Angles: </div>
+		<div id="direction">Direction: </div>
+		<div id="overlap">Overlap: </div>
+		<div id="saver">Saver: </div>
+	</div>
+	<script src="jlect-jhr.compressed.js"></script>
+</body>
