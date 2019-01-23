@@ -32,6 +32,6 @@ Cons:
 * There is currently no touch support, so it will not work on mobile, tablet or other touch-screen-based devices.
 * It only supports drawing one character at a time.
 
-##Contributing
+## Contributing
 
 I strongly encourage anyone who uses the library to contribute back to the project: https://github.com/ZacharyRead/jlect-jhr.
