@@ -7,12 +7,16 @@
 
 JLect JHR is a JavaScript library that provides support for Japanese handwritten character recognition. Users can draw a character in a defined HTML canvas element and the library will output guesses based on stroke direction.
 
+Example:
+
+![Example of Japanese Handwriting Recognition Tool](jhr-example.png?raw=true "Example of Japanese Handwriting Recognition Tool")
+
 ## License
 
 The library and all associated files provided in the official repository are covered by the following Creative Commons license:
 * Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0): https://creativecommons.org/licenses/by-sa/3.0/
 
-## Example
+## Live example
 
 For a live example of the library in use, you can visit https://www.jlect.com and click on the "字 (draw)" button beside the search bar. A simplified example is also provided in the file "example.html" found in the official repository https://github.com/ZacharyRead/jlect-jhr.
 
