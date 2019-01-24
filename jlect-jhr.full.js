@@ -6171,7 +6171,7 @@ function undo() {
         oImg.onload = function() {
             ctx.clearRect(0,0,w,h);
             ctx.drawImage(oImg, 0, 0);
-        }
+        };
         oImg.src = restorePoints[saver_count - 1];
         saver_count -= 1;
         restorePoints.pop();
@@ -6275,11 +6275,11 @@ function relMouseCoords(event){
     var canvasY = 0;
     var currentElement = this;
 
-    do{
+    do {
         totalOffsetX += currentElement.offsetLeft - currentElement.scrollLeft;
         totalOffsetY += currentElement.offsetTop - currentElement.scrollTop;
     }
-    while(currentElement = currentElement.offsetParent)
+    while(currentElement = currentElement.offsetParent);
 
     canvasX = event.pageX - totalOffsetX;
     canvasY = event.pageY - totalOffsetY;
@@ -6291,14 +6291,16 @@ function relMouseCoords(event){
 }
 HTMLCanvasElement.prototype.relMouseCoords = relMouseCoords;
 
-var downX=0, downY=0, upX=0, upY=0;
+var downX = 0, downY = 0, upX = 0, upY = 0;
 
 // Primary canvas events handler for when a user clicks (up or down) and holds the mouse button (move) or releases it (out)
 function findxy(res,e)
 {
     // On mouse click
-    if(res=='down') {
-        document.onselectstart = function(){ return false; } //necessary for Chromium; prevents text selection on mouse change
+    if (res == 'down') {
+        document.onselectstart = function(){
+            return false;
+        }; //necessary for Chromium; prevents text selection on mouse change
         
         coords = canvas.relMouseCoords(e);
         downX=coords.x;
@@ -6311,7 +6313,7 @@ function findxy(res,e)
         flag=true;
         dot_flag=true;
         
-        if(dot_flag) {
+        if (dot_flag) {
             ctx.beginPath();
             ctx.fillStyle="black";
             ctx.fillRect(currX,currY,2,2);
@@ -6321,17 +6323,18 @@ function findxy(res,e)
     }
     
     // On mouse click release
-    if(res=='up') {
-        document.onselectstart = function(){ return true; } //necessary for Chromium; prevents text selection on mouse change
-        
+    if (res == 'up') {
+        document.onselectstart = function(){
+            return true;
+        }; //necessary for Chromium; prevents text selection on mouse change
+
         coords = canvas.relMouseCoords(e);
-        upX=coords.x;
-        upY=coords.y;
-        
-        
-        calcAngle = Math.atan2(upY - downY, upX - downX)*(180/Math.PI)+180;
-        rounded_degrees = Math.round (calcAngle / 45) * 45;
-        
+        upX = coords.x;
+        upY = coords.y;
+
+        var calcAngle = Math.atan2(upY - downY, upX - downX)*(180/Math.PI)+180;
+        var rounded_degrees = Math.round (calcAngle / 45) * 45;
+
         rounded_degrees_str = "";
         if (rounded_degrees == 360 || rounded_degrees == 0 || rounded_degrees == 180)
             rounded_degrees_str = "H";
@@ -6341,19 +6344,19 @@ function findxy(res,e)
             rounded_degrees_str = "2";
         else if (rounded_degrees == 90 || rounded_degrees == 270)
             rounded_degrees_str = "V";
-        
+
         var theDiv = document.getElementById("angles");
         theDiv.innerHTML = theDiv.innerHTML + rounded_degrees_str;
         anglesArray.push(theDiv.innerHTML);
-        
+
         var guess = document.getElementById("guess");
         guess_kanji = 0;
-        
+
         var last_kanji = '';
         
         testk = testk + rounded_degrees_str;
         
-        for (i=0; i<kanji.length; i++) {
+        for (i = 0; i < kanji.length; i++) {
             if (last_kanji != kanji[i][0]) {
                 if (kanji[i][1] == testk) {
                     guess_kanji += 1;
@@ -6377,7 +6380,7 @@ function findxy(res,e)
                     if (guess_kanji == 1)
                         guess.innerHTML　= " ";
                     
-                    guess.innerHTML = guess.innerHTML + '<a class="kmatch">' + kanji[i][0] + "</a>";
+                    guess.innerHTML = guess.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
                     
                     last_kanji = kanji[i][0];
                 }
@@ -6387,7 +6390,7 @@ function findxy(res,e)
         guessArray.push(guess.innerHTML);
         
         //count fuzzy
-        var fuzzy = document.getElementById("fuzzy");
+        var fuzzy = document.getElementById('fuzzy');
         fuzzy.innerHTML　= " ";
         
         var count_v = testk.match(/V/g); 
@@ -6470,7 +6473,7 @@ function findxy(res,e)
         
         var similarity_count = 0;
         if (line_num > 1) {
-            for (i=0; i<kanji.length; i++) {
+            for (i = 0; i < kanji.length; i++) {
                 if (similarity_count > 16)
                     break;
                     
@@ -6499,21 +6502,21 @@ function findxy(res,e)
         test_dir = 0;
     }
     // On mouse release
-    if (res=="out") {
+    if (res == 'out') {
         flag=false;
     }
     // On mouse move
-    if(res=='move') {
+    if (res == 'move') {
         // On mouse click and move
-        if(flag) {
-            prevX=currX;
-            prevY=currY;
+        if (flag) {
+            prevX = currX;
+            prevY = currY;
             
             coords = canvas.relMouseCoords(e);
             currX=coords.x;
             currY=coords.y;
             
-            var imgData=ctx.getImageData(currX,currY,2,2);
+            var imgData=ctx.getImageData(currX, currY,2,2);
             red=imgData.data[0];
             green=imgData.data[1];
             blue=imgData.data[2];
@@ -6575,6 +6578,6 @@ function myTimer() {
             timeX = currX;
             timeY = currY;
         }
-        dir.innerHTML = "Direction: " + dir_count;
+        dir.innerHTML = 'Direction: ' + dir_count;
     }
 }
