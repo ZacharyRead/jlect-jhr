@@ -6026,7 +6026,7 @@ var testk = "";
 var canvas,ctx,flag=false,prevX=0,currX=0,prevY=0,currY=0,dot_flag=false;
 y=2.5;
 
-//This function draws the grid lines
+// This function draws the grid lines.
 function quad() {
     ctx.rect(0,0,w,h);
     ctx.fillStyle="white";
