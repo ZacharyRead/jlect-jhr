@@ -6529,7 +6529,7 @@ function findxy(res,e)
     }
 }
 
-/*timer*/
+/* timer */
 var myVar=setInterval(function(){myTimer()},100);
 
 var test_dir = 0; // right, 1= left
