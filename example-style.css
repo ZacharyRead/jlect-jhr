@@ -1,5 +1,5 @@
 body {
-    font-family: "Meiryo";
+    font-family: "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Osaka", "メイリオ", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 #canvas-table {
     display: table;
