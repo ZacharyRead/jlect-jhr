@@ -6031,29 +6031,48 @@ var kanji = [
   // Check < 1500 https://en.wikipedia.org/wiki/List_of_j%C5%8Dy%C5%8D_kanji
 ];
 
-var testk = "";
+/**
+ * @global
+ * @type {string}
+ */
+var testk = '';
 
-var canvas, ctx, flag = false, prevX = 0, currX = 0, prevY = 0, currY = 0,
-  dot_flag = false;
-y = 2.5;
+/**
+ * @global
+ * @type {?HTMLCanvasElement}
+ */
+var canvas;
+
+/**
+ * @global
+ * @type {?CanvasRenderingContext2D}
+ */
+var ctx;
+var flag = false;
+var prevX = 0;
+var currX = 0;
+var prevY = 0;
+var currY = 0;
+var dot_flag = false;
+var y = 2.5;
 
 /**
  * Draw the canvas grid lines.
  * @returns {undefined}
  */
-function quad() {
+function drawGridLines(w, h) {
   ctx.rect(0, 0, w, h);
-  ctx.fillStyle = "white";
+  ctx.fillStyle = 'white';
   ctx.fill();
   ctx.rect(0, 0, w, h);
-  ctx.fillStyle = "white";
+  ctx.fillStyle = 'white';
   ctx.fill();
 
   //middle vertical line
   ctx.beginPath();
   ctx.moveTo(w / 2, 0);
   ctx.lineTo(w / 2, h);
-  ctx.strokeStyle = "#555";
+  ctx.strokeStyle = '#555';
   ctx.lineWidth = 0.5;
   ctx.closePath();
   ctx.stroke();
@@ -6062,7 +6081,7 @@ function quad() {
   ctx.beginPath();
   ctx.moveTo(w / 4, 0);
   ctx.lineTo(w / 4, h);
-  ctx.strokeStyle = "#DFD";
+  ctx.strokeStyle = '#DFD';
   ctx.lineWidth = 0.5;
   ctx.closePath();
   ctx.stroke();
@@ -6071,7 +6090,7 @@ function quad() {
   ctx.beginPath();
   ctx.moveTo(w / 4 * 3, 0);
   ctx.lineTo(w / 4 * 3, h);
-  ctx.strokeStyle = "#DFD";
+  ctx.strokeStyle = '#DFD';
   ctx.lineWidth = 0.5;
   ctx.closePath();
   ctx.stroke();
@@ -6080,7 +6099,7 @@ function quad() {
   ctx.beginPath();
   ctx.moveTo(0, h / 2);
   ctx.lineTo(w, h / 2);
-  ctx.strokeStyle = "#555";
+  ctx.strokeStyle = '#555';
   ctx.lineWidth = 0.5;
   ctx.closePath();
   ctx.stroke();
@@ -6089,7 +6108,7 @@ function quad() {
   ctx.beginPath();
   ctx.moveTo(0, h / 4);
   ctx.lineTo(w, h / 4);
-  ctx.strokeStyle = "#DFD";
+  ctx.strokeStyle = '#DFD';
   ctx.lineWidth = 0.5;
   ctx.closePath();
   ctx.stroke();
@@ -6098,7 +6117,7 @@ function quad() {
   ctx.beginPath();
   ctx.moveTo(0, h / 4 * 3);
   ctx.lineTo(w, h / 4 * 3);
-  ctx.strokeStyle = "#DDD";
+  ctx.strokeStyle = '#DDD';
   ctx.lineWidth = 0.5;
   ctx.closePath();
   ctx.stroke();
@@ -6111,10 +6130,8 @@ function quad() {
 function init() {
   canvas = document.getElementById('can');
   ctx = canvas.getContext('2d');
-  w = canvas.width;
-  h = canvas.height;
 
-  quad();
+  drawGridLines(canvas.width, canvas.height);
 
   saveRestorePoint();
 
@@ -6215,6 +6232,9 @@ function saveRestorePoint() {
  */
 function undo() {
   if (restorePoints.length > 0 && saver_count > 0) {
+    /**
+     * @type {HTMLImageElement}
+     */
     var oImg = new Image();
     oImg.onload = function () {
       ctx.clearRect(0, 0, w, h);
@@ -6248,7 +6268,7 @@ function undo() {
         similarityArray.pop();
         var similarityDiv = document.getElementById('similarity');
         last_element = similarityArray[similarityArray.length - 1];
-        similarityArray.innerHTML = last_element;
+        similarityDiv.innerHTML = last_element;
       }
 
       if (dir_count) {
@@ -6328,8 +6348,8 @@ function erase() {
 function relMouseCoords(event) {
   var totalOffsetX = 0;
   var totalOffsetY = 0;
-  var canvasX = 0;
-  var canvasY = 0;
+  var canvasX;
+  var canvasY;
   var currentElement = this;
 
   do {
@@ -6359,8 +6379,18 @@ var downX = 0, downY = 0, upX = 0, upY = 0;
  * @returns {undefined}
  */
 function findxy(res, e) {
+  /**
+   * Mouse coordinates.
+   * @type {{x: number, y: number}}
+   */
+  var coords = {x: 0, y: 0};
+  /**
+   * Variable used for loop iteration.
+   * @type {number}
+   */
+  var i = 0;
   // On mouse click
-  if (res == 'down') {
+  if (res === 'down') {
     document.onselectstart = function () {
       return false;
     }; //necessary for Chromium; prevents text selection on mouse change
@@ -6387,7 +6417,7 @@ function findxy(res, e) {
   }
 
   // On mouse click release
-  if (res == 'up') {
+  if (res === 'up') {
     document.onselectstart = function () {
       return true;
     }; //necessary for Chromium; prevents text selection on mouse change
@@ -6399,17 +6429,17 @@ function findxy(res, e) {
     var calcAngle = Math.atan2(upY - downY, upX - downX) * (180 / Math.PI) + 180;
     var rounded_degrees = Math.round(calcAngle / 45) * 45;
 
-    rounded_degrees_str = '';
-    if (rounded_degrees == 360 || rounded_degrees == 0 || rounded_degrees == 180) {
+    var rounded_degrees_str = '';
+    if (rounded_degrees === 360 || rounded_degrees === 0 || rounded_degrees === 180) {
       rounded_degrees_str = 'H';
     }
-    else if (rounded_degrees == 135 || rounded_degrees == 315) {
+    else if (rounded_degrees === 135 || rounded_degrees === 315) {
       rounded_degrees_str = '3';
     }
-    else if (rounded_degrees == 45 || rounded_degrees == 225) {
+    else if (rounded_degrees === 45 || rounded_degrees === 225) {
       rounded_degrees_str = '2';
     }
-    else if (rounded_degrees == 90 || rounded_degrees == 270) {
+    else if (rounded_degrees === 90 || rounded_degrees === 270) {
       rounded_degrees_str = 'V';
     }
 
@@ -6418,21 +6448,21 @@ function findxy(res, e) {
     anglesArray.push(theDiv.innerHTML);
 
     var guess = document.getElementById('guess');
-    guess_kanji = 0;
+    var guess_kanji = 0;
 
     var last_kanji = '';
 
     testk = testk + rounded_degrees_str;
 
     for (i = 0; i < kanji.length; i++) {
-      if (last_kanji != kanji[i][0]) {
-        if (kanji[i][1] == testk) {
+      if (last_kanji !== kanji[i][0]) {
+        if (kanji[i][1] === testk) {
           guess_kanji += 1;
-          if (guess_kanji == 1) {
+          if (guess_kanji === 1) {
             guess.innerHTML = ' ';
           }
 
-          if (kanji[i][2] == dir_count) {
+          if (kanji[i][2] === dir_count) {
             guess.innerHTML = guess.innerHTML + "<a class=\"kmatch\" style=\"background-color:yellow;font-weight:bold;\">" + kanji[i][0] + "</a>";
           }
           else {
@@ -6448,7 +6478,7 @@ function findxy(res, e) {
         }
         else if (kanji[i][1].lastIndexOf(testk, 0) === 0 && line_num > 3) {
           guess_kanji += 1;
-          if (guess_kanji == 1) {
+          if (guess_kanji === 1) {
             guess.innerHTML = " ";
           }
 
@@ -6467,19 +6497,19 @@ function findxy(res, e) {
 
     var count_v = testk.match(/V/g);
     if (!count_v) {
-      count_v = '';
+      count_v = [];
     }
     var count_h = testk.match(/H/g);
     if (!count_h) {
-      count_h = '';
+      count_h = [];
     }
     var count_tlbr = testk.match(/2/g);
     if (!count_tlbr) {
-      count_tlbr = '';
+      count_tlbr = [];
     }
     var count_bltr = testk.match(/3/g);
     if (!count_bltr) {
-      count_bltr = '';
+      count_bltr = [];
     }
     var count_vert = count_tlbr.length + count_bltr.length;
 
@@ -6489,27 +6519,27 @@ function findxy(res, e) {
 
     if (line_num > 1) {
       for (i = 0; i < kanji.length; i++) {
-        if (last_kanji != kanji[i][0]) {
-          kanji_v = kanji[i][1].match(/V/g);
+        if (last_kanji !== kanji[i][0]) {
+          var kanji_v = kanji[i][1].match(/V/g);
           if (!kanji_v) {
-            kanji_v = '';
+            kanji_v = [];
           }
-          kanji_h = kanji[i][1].match(/H/g);
+          var kanji_h = kanji[i][1].match(/H/g);
           if (!kanji_h) {
-            kanji_h = '';
+            kanji_h = [];
           }
-          kanji_tlbr = kanji[i][1].match(/2/g);
+          var kanji_tlbr = kanji[i][1].match(/2/g);
           if (!kanji_tlbr) {
-            kanji_tlbr = '';
+            kanji_tlbr = [];
           }
-          kanji_bltr = kanji[i][1].match(/3/g);
+          var kanji_bltr = kanji[i][1].match(/3/g);
           if (!kanji_bltr) {
-            kanji_bltr = '';
+            kanji_bltr = [];
           }
           var kanji_vert = kanji_tlbr.length + kanji_bltr.length;
 
           if (line_num < 5) {
-            if ((count_v.length == kanji_v.length) && (count_h.length == kanji_h.length) && (fuzzy_count < 16)) { //&& count_h == kanji_h && fuzzy_count < 5) {
+            if ((count_v.length === kanji_v.length) && (count_h.length === kanji_h.length) && (fuzzy_count < 16)) { //&& count_h == kanji_h && fuzzy_count < 5) {
               if (count_vert > 1) {
                 var k_c = kanji_vert - count_vert;
                 var c_k = count_vert - kanji_vert;
@@ -6530,8 +6560,8 @@ function findxy(res, e) {
             }
           }
           else {
-            ck_v = kanji_v.length - count_v.length;
-            ck_h = kanji_h.length - count_h.length;
+            var ck_v = kanji_v.length - count_v.length;
+            var ck_h = kanji_h.length - count_h.length;
             if ((ck_v >= 0 && ck_v < 2) && (ck_h >= 0 && ck_h < 3) && (dir_count <= kanji[i][2]) && (fuzzy_count < 16)) {
               if (/^[\u4e00-\u9fbf]+$/.test(kanji[i][0])) {
                 fuzzy.innerHTML = fuzzy.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
@@ -6558,7 +6588,7 @@ function findxy(res, e) {
           break;
         }
 
-        if (last_kanji != kanji[i][0]) {
+        if (last_kanji !== kanji[i][0]) {
           if (kanji[i][1].indexOf(testk) > -1) {
             similarity.innerHTML = similarity.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
             similarity_count += 1;
@@ -6577,35 +6607,44 @@ function findxy(res, e) {
     saveRestorePoint();
     var saver = document.getElementById("saver");
     saver_count += 1;
-    saver.innerHTML = "Saver: " + saver_count;
+    saver.innerHTML = 'Saver: ' + saver_count;
 
     line_num += 1;
     test_dir = 0;
   }
   // On mouse release
-  if (res == 'out') {
+  if (res === 'out') {
     flag = false;
   }
   // On mouse move
-  if (res == 'move') {
+  if (res === 'move') {
     // On mouse click and move
     if (flag) {
       prevX = currX;
       prevY = currY;
 
+      /**
+       * The relative mouse coordinates.
+       * @type {{x: number, y: number}|*}
+       */
       coords = canvas.relMouseCoords(e);
       currX = coords.x;
       currY = coords.y;
 
+      /**
+       * Retrieves the pixel data of an area on the current canvas.
+       * @type {ImageData}
+       */
       var imgData = ctx.getImageData(currX, currY, 2, 2);
-      red = imgData.data[0];
-      green = imgData.data[1];
-      blue = imgData.data[2];
-      alpha = imgData.data[3];
+      /**
+       * Retrieves the alpha property of the RGBA value of imgData.
+       * Value can be between 0 and 255.
+       * @type {number}
+       */
+      var alpha = imgData.data[3];
       if (alpha) {
         overlap += 1;
-
-        var ol_div = document.getElementById("overlap");
+        var ol_div = document.getElementById('overlap');
         ol_div.innerHTML = "Overlap: " + overlap;
       }
       draw();
@@ -6615,7 +6654,7 @@ function findxy(res, e) {
 
 /**
  * @global
- * @type {boolean}
+ * @type {number}
  */
 var directionIsLeft = 0; // 0 = right, 1 = left
 
@@ -6628,17 +6667,17 @@ function directionalChangeTimer() {
   if (flag) {
     var dir = document.getElementById('direction');
 
-    if (direction == 0) {
+    if (!direction) {
       timeX = currX;
       timeY = currY;
       direction = downX - timeX;
       directionIsLeft = (direction > 0) ? 1 : 0;
     }
     else {
-      direction_temp = timeX - currX;
+      var direction_temp = timeX - currX;
       var temp_test_dir = (direction_temp > 0) ? 1 : 0;
 
-      direction_x_temp = Math.abs(direction_temp);
+      var direction_x_temp = Math.abs(direction_temp);
 
       if (temp_test_dir && !directionIsLeft && direction_x_temp > 6) {
         dir_count += 1;
