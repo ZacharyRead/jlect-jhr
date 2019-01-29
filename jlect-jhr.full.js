@@ -7,7 +7,6 @@
 
 /**
  * @typedef {object} MouseEvent
- * @typedef {object} HTMLElement
  */
 
 /**
@@ -6192,15 +6191,8 @@ function draw() {
   ctx.shadowBlur = 0;
 }
 
-/**
- * The current stroke count.
- * @global
- * @type {number}
- */
-var stroke = 1;
-
 //angles and kanji arrays
-var anglesArray = ['Angles: '];
+var anglesArray = [''];
 var guessArray = [''];
 var fuzzyArray = [''];
 var similarityArray = [''];
@@ -6232,9 +6224,6 @@ var restorePoints = [];
  * @returns {undefined}
  */
 function saveRestorePoint() {
-  /**
-   *
-   */
   var imgSrc = canvas.toDataURL('image/png', 1.0);
   restorePoints.push(imgSrc);
 }
@@ -6244,7 +6233,7 @@ function saveRestorePoint() {
  * @returns {undefined}
  */
 function undo() {
-  if (restorePoints.length > 0 && saver_count > 0) {
+  if ((restorePoints.length > 0) && (saver_count > 0)) {
     /**
      * @type {HTMLImageElement}
      */
@@ -6260,42 +6249,48 @@ function undo() {
     if (anglesArray.length > 0) {
       anglesArray.pop();
       var last_element = anglesArray[anglesArray.length - 1];
-      var anglesDiv = document.getElementById('angles');
-      anglesDiv.innerHTML = last_element;
+      var anglesHTMLElement = document.getElementById('angles');
+      if (isValidElement(anglesHTMLElement)) {
+        anglesHTMLElement.innerHTML = last_element;
+      }
 
       if (guessArray.length > 0) {
         guessArray.pop();
-        var guessDiv = document.getElementById('guess');
+        var guessHTMLElement = document.getElementById('guess');
         last_element = guessArray[guessArray.length - 1];
-        guessDiv.innerHTML = last_element;
+        if (isValidElement(guessHTMLElement)) {
+          guessHTMLElement.innerHTML = last_element;
+        }
       }
 
       if (fuzzyArray.length > 0) {
         fuzzyArray.pop();
-        var fuzzyDiv = document.getElementById('fuzzy');
+        var fuzzyHTMLElement = document.getElementById('fuzzy');
         last_element = fuzzyArray[fuzzyArray.length - 1];
-        fuzzyDiv.innerHTML = last_element;
+        if (isValidElement(fuzzyHTMLElement)) {
+          fuzzyHTMLElement.innerHTML = last_element;
+        }
       }
 
       if (similarityArray.length > 0) {
         similarityArray.pop();
-        var similarityDiv = document.getElementById('similarity');
+        var similarityHTMLElement = document.getElementById('similarity');
         last_element = similarityArray[similarityArray.length - 1];
-        similarityDiv.innerHTML = last_element;
+        if (isValidElement(similarityHTMLElement)) {
+          similarityHTMLElement.innerHTML = last_element;
+        }
       }
 
       if (dir_count) {
         dir_count -= 1;
-        var dirDiv = document.getElementById('direction');
-        dirDiv.innerHTML = 'Direction: ' + dir_count;
+        var directionHTMLElement = document.getElementById('direction');
+        if (isValidElement(directionHTMLElement)) {
+          directionHTMLElement.innerHTML = 'Direction: ' + dir_count;
+        }
       }
 
       if (line_num) {
         line_num -= 1;
-      }
-
-      if (stroke) {
-        stroke -= 1;
       }
 
       if (testk) {
@@ -6310,47 +6305,89 @@ function undo() {
  * @returns {undefined}
  */
 function erase() {
+  // Clear the entire canvas.
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // Redraw the grid lanes on the canvas.
   drawGridLines();
 
-  var theDiv = document.getElementById("angles");
-  theDiv.innerHTML = "Angles: ";
-  var guess = document.getElementById("guess");
-  guess.innerHTML = " ";
-  var fuzzy = document.getElementById("fuzzy");
-  fuzzy.innerHTML = " ";
-  var similarity = document.getElementById("similarity");
-  similarity.innerHTML = " ";
-  var dir = document.getElementById("direction");
-  dir.innerHTML = "Direction:";
-  var ol_div = document.getElementById("overlap");
-  ol_div.innerHTML = "Overlap:";
-  var saver = document.getElementById("saver");
-  saver.innerHTML = "Saver:";
-  testk = "";
-  stroke = 1;
-
-  //erase timer values
-  dir_count = 0;
-  timeX = 0;
-  timeY = 0;
-  direction = 0;
-  overlap = 0;
-  saver_count = 0;
-  line_num = 0;
-  test_dir = 0;
-  restorePoints = [];
-  saveRestorePoint();
-
-  //angles and kanji arrays
-  anglesArray.length = 0;
-  anglesArray = ['Angles: '];
+  /**
+   * The div element containing the list of near matches.
+   * @type {HTMLElement}
+   */
+  var guessHTMLElement = /** @type {HTMLElement} */ document.getElementById('guess');
+  if (isValidElement(guessHTMLElement)) {
+    guessHTMLElement.innerHTML = '';
+  }
   guessArray.length = 0;
   guessArray = [''];
+
+  /**
+   * The div element containing the list of fuzze matches.
+   * @type {HTMLElement}
+   */
+  var fuzzyHTMLElement = document.getElementById('fuzzy');
+  if (isValidElement(fuzzyHTMLElement)) {
+    fuzzyHTMLElement.innerHTML = '';
+  }
   fuzzyArray.length = 0;
   fuzzyArray = [''];
+
+  /**
+   * The div element containing the list of similarity matches.
+   * @type {HTMLElement}
+   */
+  var similarityHTMLElement = document.getElementById('similarity');
+  if (isValidElement(similarityHTMLElement)) {
+    similarityHTMLElement.innerHTML = '';
+  }
   similarityArray.length = 0;
   similarityArray = [''];
+
+  /**
+   * The div element displaying the stroke angles.
+   * @type {HTMLElement}
+   */
+  var angleHTMLElement = document.getElementById('angles');
+  if (isValidElement(angleHTMLElement)) {
+    angleHTMLElement.innerHTML = '';
+  }
+  anglesArray.length = 0;
+  anglesArray = [''];
+
+  /**
+   * The div element displaying the number of direction changes.
+   * @type {HTMLElement}
+   */
+  var directionHTMLElement = document.getElementById('direction');
+  directionHTMLElement.innerHTML = '';
+  direction = 0;
+  test_dir = 0;
+  dir_count = 0;
+
+  /**
+   * The div element displaying the number of stroke overlaps (buggy).
+   * @type {HTMLElement}
+   */
+  var overlapDiv = document.getElementById('overlap');
+  overlapDiv.innerHTML = '';
+  overlap = 0;
+
+  /**
+   * The div element displaying the number of save points.
+   * @type {HTMLElement}
+   */
+  var saverDiv = document.getElementById('saver');
+  saverDiv.innerHTML = '';
+  restorePoints = [];
+  saveRestorePoint();
+  saver_count = 0;
+
+  testk = '';
+
+  //erase timer values
+  timeX = 0;
+  timeY = 0;
+  line_num = 0;
 }
 
 /**
@@ -6389,7 +6426,7 @@ var upX = 0;
 var upY = 0;
 
 /**
- * Primary canvas events handler for when a user clicks (up or down) and holds
+ * Primary canvas events handler for when a user clicks (up or down), holds
  * the mouse button (move) or releases it (out)
  * @param {string} res - The mouse event.
  * @param {MouseEvent} e - The mouse event.
@@ -6653,10 +6690,14 @@ function findxy(res, e) {
     timeX = 0;
     direction = 0;
 
-    saveRestorePoint();
+    /**
+     * The number of save points.
+     * @type {HTMLElement}
+     */
     var saver = document.getElementById("saver");
     saver_count += 1;
-    saver.innerHTML = 'Saver: ' + saver_count;
+    saver.innerHTML = saver_count.toString();
+    saveRestorePoint();
 
     line_num += 1;
     test_dir = 0;
@@ -6694,7 +6735,7 @@ function findxy(res, e) {
       if (alpha) {
         overlap += 1;
         var ol_div = document.getElementById('overlap');
-        ol_div.innerHTML = "Overlap: " + overlap;
+        ol_div.innerHTML = overlap;
       }
       draw();
     }
@@ -6714,7 +6755,6 @@ var directionIsLeft = 0; // 0 = right, 1 = left
  */
 function directionalChangeTimer() {
   if (flag) {
-    var dir = document.getElementById('direction');
     if (!direction) {
       timeX = currX;
       timeY = currY;
@@ -6739,6 +6779,34 @@ function directionalChangeTimer() {
       timeX = currX;
       timeY = currY;
     }
-    dir.innerHTML = 'Direction: ' + dir_count;
+    /**
+     * Update the number of stroke direction changes.
+     * @type {HTMLElement}
+     */
+    var directionHTMLElement = document.getElementById('direction');
+    if (isValidElement(directionHTMLElement)) {
+      directionHTMLElement.innerHTML = dir_count;
+    }
   }
+}
+
+/**
+ * Verify if an element is a valid HTML element.
+ * @param {*} obj - The object to be validated as an HTML element.
+ * @returns {boolean}
+ */
+function isValidElement(obj) {
+  if (!obj) {
+    return false;
+  }
+  var isElement = false;
+  try {
+    // For modern browsers.
+    isElement = obj instanceof HTMLElement;
+  }
+  catch(e) {
+    // For older browsers such as Internet Explorer.
+    isElement = obj.nodeType && obj.nodeType === 1;
+  }
+  return isElement;
 }
