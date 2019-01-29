@@ -6,7 +6,7 @@
     <meta name="author" content="Zachary Read">
     <link rel="stylesheet" href="example-style.css">
 </head>
-<body onload="init()">
+<body>
     <h1>JLect Japanese Handwriting Recognition Tool (JLect JHR)</h1>
     <p>This page provides an example of how the JLect JHR library can be integrated onto your site.</p>
     <h2>Handwritten Kanji Search</h2>
@@ -14,7 +14,7 @@
     <div id="canvas-table">
         <div id="canvas-drawbox">
             <div><canvas id="can" width="231" height="231"></canvas></div>
-            <div><input type="button" value="Clear" id="clr" size="23" onclick="erase()"><input type="button" value="Undo" id="undo" size="23" onclick="undo()"></div>
+            <div><input type="button" value="Clear" id="jhr-clear" size="23"><input type="button" value="Undo" id="jhr-undo" size="23"></div>
         </div>
         <div id="handwriting-results">
             <h3>Near match:</h3>

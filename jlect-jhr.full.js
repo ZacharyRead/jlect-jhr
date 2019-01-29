@@ -6175,6 +6175,14 @@ function init() {
     findxy('out', e)
   }, false);
 
+  document.getElementById('jhr-clear').addEventListener('click', function(){
+    erase();
+  }, false);
+
+  document.getElementById('jhr-undo').addEventListener('click', function(){
+    undo();
+  }, false);
+
   setInterval(function () {
     directionalChangeTimer()
   }, 100);
@@ -6415,24 +6423,22 @@ function erase() {
  * @returns {{x: number, y: number}}
  */
 HTMLCanvasElement.prototype.relMouseCoords = function relMouseCoords(event) {
+  if (event.offsetX !== undefined && event.offsetY !== undefined) {
+    return {x: event.offsetX, y: event.offsetY};
+  }
   var totalOffsetX = 0;
   var totalOffsetY = 0;
   var canvasX;
   var canvasY;
   var currentElement = this;
-
   do {
     totalOffsetX += currentElement.offsetLeft - currentElement.scrollLeft;
     totalOffsetY += currentElement.offsetTop - currentElement.scrollTop;
+    currentElement = currentElement.offsetParent;
   }
-  while (currentElement = currentElement.offsetParent);
-
+  while (currentElement);
   canvasX = event.pageX - totalOffsetX;
   canvasY = event.pageY - totalOffsetY;
-
-  if (event.offsetX !== undefined && event.offsetY !== undefined) {
-    return {x: event.offsetX, y: event.offsetY};
-  }
   return {x: canvasX, y: canvasY}
 };
 
@@ -6826,3 +6832,7 @@ function isValidElement(obj) {
   }
   return isElement;
 }
+
+window.addEventListener("load", function(){
+  init();
+});
