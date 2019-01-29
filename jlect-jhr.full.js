@@ -6060,7 +6060,9 @@ var y = 2.5;
  * Draw the canvas grid lines.
  * @returns {undefined}
  */
-function drawGridLines(w, h) {
+function drawGridLines() {
+  var w = canvas.width;
+  var h = canvas.height;
   ctx.rect(0, 0, w, h);
   ctx.fillStyle = 'white';
   ctx.fill();
@@ -6128,10 +6130,18 @@ function drawGridLines(w, h) {
  * @returns {undefined}
  */
 function init() {
-  canvas = document.getElementById('can');
+  canvas = /** @type {HTMLCanvasElement} */ document.getElementById('can');
+  if (!canvas || !(canvas instanceof HTMLCanvasElement)) {
+    console.log('Unable to initiate canvas event listeners. No canvas detected.');
+    return;
+  }
   ctx = canvas.getContext('2d');
+  if (!ctx || !(ctx instanceof CanvasRenderingContext2D)) {
+    console.log('Unable to initiate canvas event listeners. Canvas could not be parsed.');
+    return;
+  }
 
-  drawGridLines(canvas.width, canvas.height);
+  drawGridLines();
 
   saveRestorePoint();
 
@@ -6222,7 +6232,10 @@ var restorePoints = [];
  * @returns {undefined}
  */
 function saveRestorePoint() {
-  var imgSrc = canvas.toDataURL('image/png');
+  /**
+   *
+   */
+  var imgSrc = canvas.toDataURL('image/png', 1.0);
   restorePoints.push(imgSrc);
 }
 
@@ -6297,8 +6310,8 @@ function undo() {
  * @returns {undefined}
  */
 function erase() {
-  ctx.clearRect(0, 0, w, h);
-  quad();
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawGridLines();
 
   var theDiv = document.getElementById("angles");
   theDiv.innerHTML = "Angles: ";
@@ -6342,10 +6355,13 @@ function erase() {
 
 /**
  * Get the relative mouse coordinates.
+ * @name HTMLCanvasElement#relMouseCoords
+ * @function
+ * @memberof! HTMLCanvasElement
  * @param {MouseEvent} event -
  * @returns {{x: number, y: number}}
  */
-function relMouseCoords(event) {
+HTMLCanvasElement.prototype.relMouseCoords = function relMouseCoords(event) {
   var totalOffsetX = 0;
   var totalOffsetY = 0;
   var canvasX;
@@ -6365,11 +6381,12 @@ function relMouseCoords(event) {
     return {x: event.offsetX, y: event.offsetY};
   }
   return {x: canvasX, y: canvasY}
-}
+};
 
-HTMLCanvasElement.prototype.relMouseCoords = relMouseCoords;
-
-var downX = 0, downY = 0, upX = 0, upY = 0;
+var downX = 0;
+var downY = 0;
+var upX = 0;
+var upY = 0;
 
 /**
  * Primary canvas events handler for when a user clicks (up or down) and holds
@@ -6495,23 +6512,43 @@ function findxy(res, e) {
     var fuzzy = document.getElementById('fuzzy');
     fuzzy.innerHTML = " ";
 
+    /**
+     * Number of vertical strokes (|).
+     * @type {RegExpMatchArray}
+     */
     var count_v = testk.match(/V/g);
     if (!count_v) {
-      count_v = [];
+      count_v = /** @type {RegExpMatchArray} */ [];
     }
+    /**
+     * Number of horizontal strokes (―).
+     * @type {RegExpMatchArray}
+     */
     var count_h = testk.match(/H/g);
     if (!count_h) {
-      count_h = [];
+      count_h = /** @type {RegExpMatchArray} */ [];
     }
+    /**
+     * Number of diagonal strokes from top-left to bottom-right (\).
+     * @type {RegExpMatchArray}
+     */
     var count_tlbr = testk.match(/2/g);
     if (!count_tlbr) {
-      count_tlbr = [];
+      count_tlbr = /** @type {RegExpMatchArray} */ [];
     }
+    /**
+     * Number of diagonal strokes from bottom-left to top-right (/).
+     * @type {RegExpMatchArray}
+     */
     var count_bltr = testk.match(/3/g);
     if (!count_bltr) {
-      count_bltr = [];
+      count_bltr = /** @type {RegExpMatchArray} */ [];
     }
-    var count_vert = count_tlbr.length + count_bltr.length;
+    /**
+     * Sum of all diagonal strokes (/ and \).
+     * @type {number}
+     */
+    var count_diagonal = count_tlbr.length + count_bltr.length;
 
     var fuzzy_count = 0;
 
@@ -6520,29 +6557,41 @@ function findxy(res, e) {
     if (line_num > 1) {
       for (i = 0; i < kanji.length; i++) {
         if (last_kanji !== kanji[i][0]) {
+          /**
+           * @type {RegExpMatchArray}
+           */
           var kanji_v = kanji[i][1].match(/V/g);
           if (!kanji_v) {
-            kanji_v = [];
+            kanji_v = /** @type {RegExpMatchArray} */ [];
           }
+          /**
+           * @type {RegExpMatchArray}
+           */
           var kanji_h = kanji[i][1].match(/H/g);
           if (!kanji_h) {
-            kanji_h = [];
+            kanji_h = /** @type {RegExpMatchArray} */ [];
           }
+          /**
+           * @type {RegExpMatchArray}
+           */
           var kanji_tlbr = kanji[i][1].match(/2/g);
           if (!kanji_tlbr) {
-            kanji_tlbr = [];
+            kanji_tlbr = /** @type {RegExpMatchArray} */ [];
           }
+          /**
+           * @type {RegExpMatchArray}
+           */
           var kanji_bltr = kanji[i][1].match(/3/g);
           if (!kanji_bltr) {
-            kanji_bltr = [];
+            kanji_bltr = /** @type {RegExpMatchArray} */ [];
           }
           var kanji_vert = kanji_tlbr.length + kanji_bltr.length;
 
           if (line_num < 5) {
             if ((count_v.length === kanji_v.length) && (count_h.length === kanji_h.length) && (fuzzy_count < 16)) { //&& count_h == kanji_h && fuzzy_count < 5) {
-              if (count_vert > 1) {
-                var k_c = kanji_vert - count_vert;
-                var c_k = count_vert - kanji_vert;
+              if (count_diagonal > 1) {
+                var k_c = kanji_vert - count_diagonal;
+                var c_k = count_diagonal - kanji_vert;
                 if ((k_c < 2 && k_c > 0) || (c_k < 2 && c_k > 0)) {
                   if (/^[\u4e00-\u9fbf]+$/.test(kanji[i][0])) {
                     fuzzy.innerHTML = fuzzy.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
@@ -6666,7 +6715,6 @@ var directionIsLeft = 0; // 0 = right, 1 = left
 function directionalChangeTimer() {
   if (flag) {
     var dir = document.getElementById('direction');
-
     if (!direction) {
       timeX = currX;
       timeY = currY;
@@ -6676,17 +6724,14 @@ function directionalChangeTimer() {
     else {
       var direction_temp = timeX - currX;
       var temp_test_dir = (direction_temp > 0) ? 1 : 0;
-
       var direction_x_temp = Math.abs(direction_temp);
 
       if (temp_test_dir && !directionIsLeft && direction_x_temp > 6) {
         dir_count += 1;
-
       }
       else if (!temp_test_dir && directionIsLeft && direction_x_temp > 6) {
         dir_count += 1;
       }
-
       if (direction_x_temp > 6) {
         directionIsLeft = temp_test_dir;
         direction = direction_temp;
