@@ -572,6 +572,7 @@ var kanji = [
   ['令', '32HHV', 0],
   ['兄', 'V2H32', 1],
   ['兄', 'V2HV2', 0],
+  ['兄', 'V2H3H', 0],
   ['半', '23HHV', 0],
   ['半', 'V3HVH', 0],
   ['半', 'V3HHV', 0],
@@ -817,6 +818,13 @@ var kanji = [
   ['仔', '3V2VH', 1],
   ['仔', '3VVH', 1],
   ['戸', 'H2H3', 0],
+  ['戸', 'H2HH', 0],
+  ['戸', 'H2HV', 0],
+  ['戸', 'HHH3', 0],
+  ['戸', '2HHV', 0],
+  ['戸', 'HHHV', 0],
+  ['戸', 'HV2H', 0],
+  ['戸', 'H3HH', 0],
   ['斗', '22HV', 0],
   ['汁', '223HV', 0],
   ['吐', 'V2HHVH', 0],
@@ -1135,6 +1143,7 @@ var kanji = [
   ['草', 'HVVV2HHHV', 0],
   ['走', 'HHHV32', 0],
   ['走', 'HHVH3H', 0],
+  ['走', 'HVHVH3H', 0],
   ['沿', '22332V2H', 0],
   ['沿', '2H33HV2H', 0],
   ['荘', 'HVVVH3HVH', 0],
@@ -1308,6 +1317,7 @@ var kanji = [
   ['野', 'V2HVHHVH22HV', 1],
   ['野', 'V2HHVH3222V', 3],
   ['野', 'V2HHVHH222V', 3],
+  ['野', 'V2HHVH322HV', 3],
   ['唐', 'VH32HHVV2H', 0],
   ['唐', 'VHV2HVHV2H', 1],
   ['广', 'VHV', 0],
@@ -2188,6 +2198,7 @@ var kanji = [
   ['担', 'VH3V2HHH', 0],
   ['黒', 'V2HHHVH3222', 0],
   ['黒', 'V2HHVHH3222', 0],
+  ['黒', 'V2HHHHVH3222', 0],
   ['含', '32HVV2H', 1],
   ['主', '2HVHH', 0],
   ['主', '2HHVH', 0],
@@ -2251,6 +2262,7 @@ var kanji = [
   ['郷', 'VV32HHV22VV', 0],
   ['考', 'HVH3HV', 1],
   ['考', 'HVH3H2', 1],
+  ['考', 'HVH33V', 2],
   ['公', '3222', 0],
   ['公', '32V2', 0],
   ['才', 'HVH', 0],
@@ -2678,6 +2690,7 @@ var kanji = [
   ['心', '23H22', 0],
   ['心', 'V222', 0],
   ['心', '2V222', 0],
+  ['心', '3222', 0],
   ['必', '23222', 0],
   ['必', '22223', 0],
   ['必', '23232', 0],
@@ -2686,10 +2699,15 @@ var kanji = [
   ['必', '2323V', 1],
   ['京', 'VHV2HV32', 0],
   ['京', 'VHV2H3V2', 0],
+  ['京', 'VHV2HVH2', 1],
   ['亰', 'VHV2HHV32', 0],
   ['亰', 'VHV2HH3V2', 0],
   ['局', '2HV2V2H', 1],
   ['局', '2H32V2H', 1],
+  ['局', 'HHV2V2H', 1],
+  ['局', 'HH3V2H2', 1],
+  ['局', 'HH32V2H', 2],
+  ['局', 'HH3HV2HV', 2],
   ['号', 'V2HHV', 3],
   ['号', 'V2HH2', 3],
   ['号', 'V2HH32', 2],
@@ -4120,6 +4138,7 @@ var kanji = [
   ['社', 'VV2VHVH', 1],
   ['秀', '3HV3223', 2],
   ['究', 'VVH3223', 0],
+  ['究', 'VVH32H3', 0],
   ['系', 'HVV2V32', 2],
   ['芳', 'HVVVHV3', 1],
   ['芸', 'HVVHHV2', 1],
@@ -4311,6 +4330,7 @@ var kanji = [
   ['曜', 'V2HH2HH2HH3V3HVHHH', 0],
   ['曜', 'V2HH2HH2HH3VHVHHVH', 0],
   ['曜', 'V2HH2HH2HH3H3VVHHH', 0],
+  ['曜', 'VVHH2HH2HH3V3HVHHH', 0],
   ['懲', '33VV2VHVHH3H323222', 1],
   ['懲', '33VV2VHHVH3H323222', 1],
   ['韓', 'HVV2HHHV23HV2HHVHV', 0],
@@ -5513,6 +5533,7 @@ var kanji = [
   ['祭', '3VHHV2HH332', 2],
   ['菜', 'HV33223HV32', 0],
   ['菜', 'HVVH223HV3H', 0],
+  ['菜', 'HVV3223HV32', 0],
   ['捜', 'H3VV2HHVV2', 2],
   ['捜', 'HV3V2HHVV2', 1],
   ['捜', 'HV3VV2HHV2', 1],
@@ -5616,18 +5637,73 @@ var kanji = [
   ['枠', 'HV3223HV', 2],
   ['枠', 'HV32V2HV', 2],
   ['枠', 'HV3223VH', 2],
-  ['惑', '', 0],
-  ['麓', '', 0],
-  ['廊', '', 0],
-  ['浪', '', 0],
-  ['朗', '', 0],
-  ['朗', '', 0],
-  ['郎', '', 0],
-  ['郞', '', 0],
-  ['廾', '', 0],
-  ['勞', '', 0],
-  ['賂', '', 0],
-  ['炉', '', 0],
+  ['惑', 'HV2H3H322232', 0],
+  ['惑', 'H23V2HH3H222', 1],
+  ['惑', 'HV2HH2H3222', 1],
+  ['惑', 'HV2H32323222', 1],
+  ['惑', 'HV2H32323H22', 1],
+  ['麓', 'HV32HV3HVHVVVHHH2H2', 0],
+  ['麓', 'HV32HV3HVH3HHVVH2H2', 1],
+  ['麓', 'VHVVVHH3232HV3HHVH2', 1],
+  ['麓', 'HV3HHV32HVVHHVV3232', 1],
+  ['廊', 'VHVV2HHV32VVV', 3],
+  ['廊', 'VHVV2HH22V2V', 3],
+  ['廊', 'VHV32HH2223V', 3],
+  ['廊', 'VHV32HHV32VVV', 3],
+  ['廊', 'VHVV2HHV3HVVV', 2],
+  ['浪', '22322HHV32', 0],
+  ['浪', '223V2HHV32', 1],
+  ['浪', 'VV3V2HHV32', 1],
+  ['朗', '22HHV2VVHH', 2],
+  ['朗', 'V2HH22VVHH', 2],
+  ['朗', '22HH22VVHH', 2],
+  ['朗', '22HH232VVHH', 2],
+  ['朗', '22HH232VVHH', 2],
+  ['朗', 'V2HH232VVHH', 2],
+  ['朗', '22HHV32VVHH', 2],
+  ['朗', '32HH232VVHH', 1],
+  ['朗', '32HH232V2HH', 1],
+  ['郎', '22HHV3223V', 3],
+  ['郎', 'V2HH22V23', 3],
+  ['郎', 'V2HH22VVV', 2],
+  ['郎', '22HH23223V', 2],
+  ['郞', '22HH23223V', 2],
+  ['郞', 'V2HH232VVV', 2],
+  ['郞', 'V2HH232V23', 2],
+  ['郞', 'V2HHV32V23', 3],
+  ['郞', 'V2HHV322VV', 3],
+  ['郞', 'V2HH2322VV', 3],
+  ['廾', 'H3V', 0],
+  ['廾', 'HVV', 0],
+  ['廾', 'VVH', 0],
+  ['廾', '3VH', 0],
+  ['勞', '23322332VH23', 1],
+  ['勞', '2332V332VH23', 1],
+  ['勞', '33323332VH23', 1],
+  ['勞', 'VVV2VV32VH2V', 1],
+  ['勞', '3V23V323VH23', 1],
+  ['勞', '23232323VH23', 1],
+  ['勞', 'V3VH2332VH2V', 1],
+  ['勞', '23322332VH2V', 1],
+  ['勞', '322332V3VH23', 1],
+  ['勞', '2332233HVHV3', 1],
+  ['賂', 'V2HH323V2V2H', 2],
+  ['賂', 'V2HHHV23V2V2H', 2],
+  ['賂', 'V2HHH323V2V2H', 2],
+  ['賂', 'VVHHH323V2V2H', 2],
+  ['賂', 'VVHHH323H32V2H', 2],
+  ['炉', '23V222H3', 1],
+  ['炉', '23V2H2H3', 1],
+  ['炉', '23V222HV', 1],
+  ['炉', '23V2H2HV', 1],
+  ['炉', '223222HV', 1],
+  ['炉', '2232H2HV', 1],
+  ['炉', '223222H3', 1],
+  ['炉', '2232H2H3', 1],
+  ['炉', '23V22HVV', 1],
+  ['炉', '23V2HHVV', 1],
+  ['炉', 'V3V2H2HV', 1],
+  ['娩', 'VH332V2VH32', 3],
   ['爐', '', 0],
   ['鍊', '', 0],
   ['練', '', 0],
@@ -5641,7 +5717,10 @@ var kanji = [
   ['鈴', '', 0],
   ['例', '', 0],
   ['戾', '', 0],
-  ['戶', '', 0],
+  ['戶', '3V2H', 1],
+  ['戶', '32H', 0],
+  ['戶', 'HHHV', 0],
+  ['戶', '2HHV', 0],
   ['勵', '', 0],
   ['禮', '', 0],
   ['類', '', 0],
@@ -5809,7 +5888,9 @@ var kanji = [
   ['侮', '', 0],
   ['幅', '', 0],
   ['復', '', 0],
-  ['福', '', 0],
+  ['福', 'HHV32V2HV2VHH', 0],
+  ['福', 'HHV32V2HV2VHH', 0],
+  ['福', 'VV2VHV2HV2VHH', 0],
   ['腹', '', 0],
   ['拂', '', 0],
   ['粉', '', 0],
@@ -5818,8 +5899,14 @@ var kanji = [
   ['墳', '', 0],
   ['憤', '', 0],
   ['奮', '', 0],
-  ['併', '', 0],
-  ['倂', '', 0],
+  ['併', '3V23HH3V', 0],
+  ['併', '3V23HHVV', 0],
+  ['倂', '3V33HH3V', 0],
+  ['倂', '3V33HHVV', 0],
+  ['倂', '3V3HHV3HHV', 0],
+  ['倂', '3V3HHV3HHV', 0],
+  ['倂', '3V3HH33HHV', 0],
+  ['倂', '3V3HH33HH3', 0],
   ['竝', '', 0],
   ['陛', '', 0],
   ['塀', '', 0],
@@ -5829,7 +5916,7 @@ var kanji = [
   ['蔽', '', 0],
   ['餠', '', 0],
   ['璧', '', 0],
-  ['蔑', '', 0],
+  ['蔑', 'HVVVHVVHVH2232', 0],
   ['邊', '', 0],
   ['辨', '', 0],
   ['瓣', '', 0],
@@ -5915,7 +6002,8 @@ var kanji = [
   ['譽', '', 0],
   ['預', '', 0],
   ['妖', '', 0],
-  ['洋', '', 0],
+  ['洋', '22323HHHV', 0],
+  ['洋', '22V23HHHV', 0],
   ['庸', '', 0],
   ['揚', '', 0],
   ['絲', '', 0],
@@ -6041,6 +6129,16 @@ var kanji = [
   ['燈', '', 0],
   ['當', '', 0],
   ['黨', '', 0],
+  ['歌', 'HV2HVHV2HV3H32', 2],
+  ['歌', 'HVV2HHVV2H3H32', 2],
+  ['歌', 'V2HHVV2HHV3H32', 2],
+  ['歌', 'HV2HHV2HVV3H32', 2],
+  ['顛', 'HVV2HHHH32H3V2HHH32', 2],
+  ['澗', '223V2HHVVHHV2HH', 1],
+  ['弛', '2HVHVV', 4],
+  ['運', '3HHV2HHHV2VH', 3],
+  ['曳', 'V2HH23', 0],
+  ['研', 'H3V2HHH3V', 0],
   ['', '', 0],
   ['', '', 0]
   // Check < 1500 https://en.wikipedia.org/wiki/List_of_j%C5%8Dy%C5%8D_kanji
@@ -6078,23 +6176,13 @@ var y = 2.5;
 function drawGridLines() {
   var w = canvas.width;
   var h = canvas.height;
-  ctx.rect(0, 0, w, h);
-  ctx.fillStyle = 'white';
-  ctx.fill();
+
+  // Background fill (white)
   ctx.rect(0, 0, w, h);
   ctx.fillStyle = 'white';
   ctx.fill();
 
-  //middle vertical line
-  ctx.beginPath();
-  ctx.moveTo(w / 2, 0);
-  ctx.lineTo(w / 2, h);
-  ctx.strokeStyle = '#555';
-  ctx.lineWidth = 0.5;
-  ctx.closePath();
-  ctx.stroke();
-
-  //left-most vertical line
+  // Left-most vertical line (faint green).
   ctx.beginPath();
   ctx.moveTo(w / 4, 0);
   ctx.lineTo(w / 4, h);
@@ -6103,7 +6191,7 @@ function drawGridLines() {
   ctx.closePath();
   ctx.stroke();
 
-  //right-most vertical line
+  // Right-most vertical line (faint green).
   ctx.beginPath();
   ctx.moveTo(w / 4 * 3, 0);
   ctx.lineTo(w / 4 * 3, h);
@@ -6112,16 +6200,7 @@ function drawGridLines() {
   ctx.closePath();
   ctx.stroke();
 
-  //middle horizontal line
-  ctx.beginPath();
-  ctx.moveTo(0, h / 2);
-  ctx.lineTo(w, h / 2);
-  ctx.strokeStyle = '#555';
-  ctx.lineWidth = 0.5;
-  ctx.closePath();
-  ctx.stroke();
-
-  //top-most horizontal line
+  // Top-most horizontal line (faint green).
   ctx.beginPath();
   ctx.moveTo(0, h / 4);
   ctx.lineTo(w, h / 4);
@@ -6130,11 +6209,29 @@ function drawGridLines() {
   ctx.closePath();
   ctx.stroke();
 
-  //bottom-most horizontal line
+  // Bottom-most horizontal line (faint green).
   ctx.beginPath();
   ctx.moveTo(0, h / 4 * 3);
   ctx.lineTo(w, h / 4 * 3);
   ctx.strokeStyle = '#DDD';
+  ctx.lineWidth = 0.5;
+  ctx.closePath();
+  ctx.stroke();
+
+  // Middle vertical line (grey).
+  ctx.beginPath();
+  ctx.moveTo(w / 2, 0);
+  ctx.lineTo(w / 2, h);
+  ctx.strokeStyle = '#555';
+  ctx.lineWidth = 0.5;
+  ctx.closePath();
+  ctx.stroke();
+
+  // Middle horizontal line (grey).
+  ctx.beginPath();
+  ctx.moveTo(0, h / 2);
+  ctx.lineTo(w, h / 2);
+  ctx.strokeStyle = '#555';
   ctx.lineWidth = 0.5;
   ctx.closePath();
   ctx.stroke();
@@ -6147,12 +6244,12 @@ function drawGridLines() {
 function init() {
   canvas = /** @type {HTMLCanvasElement} */ document.getElementById('can');
   if (!canvas || !(canvas instanceof HTMLCanvasElement)) {
-    console.log('Unable to initiate canvas event listeners. No canvas detected.');
+    console.log('[JHR library] Unable to initiate canvas event listeners. No canvas detected.');
     return;
   }
   ctx = canvas.getContext('2d');
   if (!ctx || !(ctx instanceof CanvasRenderingContext2D)) {
-    console.log('Unable to initiate canvas event listeners. Canvas could not be parsed.');
+    console.log('[JHR library] Unable to initiate canvas event listeners. Canvas could not be parsed.');
     return;
   }
 
@@ -6160,6 +6257,7 @@ function init() {
 
   saveRestorePoint();
 
+  // Add mouse-related event listeners for when the user clicks on the canvas.
   canvas.addEventListener('mousemove', function (e) {
     findxy('move', e)
   }, false);
@@ -6175,13 +6273,27 @@ function init() {
     findxy('out', e)
   }, false);
 
-  document.getElementById('jhr-clear').addEventListener('click', function(){
-    erase();
-  }, false);
+  /**
+   * The clear button, defined by an HTML element with the id "jhr-clear".
+   * @type {HTMLElement}
+   */
+  var clearButton = document.getElementById('jhr-clear');
+  if (isValidElement(clearButton)) {
+    clearButton.addEventListener('click', function () {
+      erase();
+    }, false);
+  }
 
-  document.getElementById('jhr-undo').addEventListener('click', function(){
-    undo();
-  }, false);
+  /**
+   * The undo button, defined by an HTML element with the id "jhr-undo".
+   * @type {HTMLElement}
+   */
+  var undoButton = document.getElementById('jhr-undo');
+  if (isValidElement(undoButton)) {
+    undoButton.addEventListener('click', function () {
+      undo();
+    }, false);
+  }
 
   setInterval(function () {
     directionalChangeTimer()
@@ -6199,7 +6311,7 @@ function draw() {
   ctx.strokeStyle = 'black';
   ctx.lineWidth = 3;
 
-  ctx.shadowColor = '#000';
+  ctx.shadowColor = 'black';
   ctx.shadowOffsetX = 0;
   ctx.shadowOffsetY = 0;
   ctx.shadowBlur = 2;
