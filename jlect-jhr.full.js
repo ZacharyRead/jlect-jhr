@@ -7083,7 +7083,6 @@ function undo() {
      * @type {HTMLImageElement}
      */
     var oImg = new Image();
-	var canvas = document.getElementById("can");
     oImg.onload = function () {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(oImg, 0, 0);
@@ -7320,9 +7319,9 @@ function findxy(res, e) {
       return true;
     }; //necessary for Chromium; prevents text selection on mouse change
 
-    coords = canvas.relMouseCoords(e);
-    upX = coords.x;
-    upY = coords.y;
+    //coords = canvas.relMouseCoords(e);
+    upX = prevX;
+    upY = prevY;
 
     var calcAngle = Math.atan2(upY - downY, upX - downX) * (180 / Math.PI) + 180;
     var rounded_degrees = Math.round(calcAngle / 45) * 45;
