@@ -6918,7 +6918,7 @@ function undo() {
      * @type {HTMLImageElement}
      */
     var oImg = new Image();
-	var canvas = document.getElementById("can"),
+	var canvas = document.getElementById("can");
     oImg.onload = function () {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(oImg, 0, 0);
