@@ -1,7 +1,7 @@
 # JLect Japanese Handwriting Recognition Tool (JLect JHR)
 
 (c) Zachary Read | JLect.com  
-2013-2019
+2013-2023
 
 ## What is it?
 

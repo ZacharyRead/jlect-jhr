@@ -6921,6 +6921,19 @@ function init() {
   canvas.addEventListener('mouseout', function (e) {
     findxy('out', e)
   }, false);
+  
+  // Add touch-related event listeners for when the user clicks on the canvas.
+  canvas.addEventListener('touchmove', function (e) {
+    findxy('move', e)
+  }, false);
+  canvas.addEventListener('touchstart', function (e) {
+    //prevent cursor change in Chrome when drawing
+    e.preventDefault();
+    findxy('down', e);
+  }, false);
+  canvas.addEventListener('touchend', function (e) {
+    findxy('up', e)
+  }, false);
 
   /**
    * The clear button, defined by an HTML element with the id "jhr-clear".
