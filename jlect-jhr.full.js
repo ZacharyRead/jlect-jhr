@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @file JLect Japanese Handwriting Recognition Tool (JLect JHR)
  * @author Zachary Read
  *
