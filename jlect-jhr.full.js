@@ -6896,7 +6896,7 @@ function init() {
     console.log('[JHR library] Unable to initiate canvas event listeners. No canvas detected.');
     return;
   }
-  ctx = canvas.getContext('2d');
+  ctx = canvas.getContext('2d', { willReadFrequently: true });
   if (!ctx || !(ctx instanceof CanvasRenderingContext2D)) {
     console.log('[JHR library] Unable to initiate canvas event listeners. Canvas could not be parsed.');
     return;
