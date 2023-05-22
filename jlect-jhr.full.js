@@ -6923,17 +6923,38 @@ function init() {
   }, false);
   
   // Add touch-related event listeners for when the user clicks on the canvas.
-  canvas.addEventListener('touchmove', function (e) {
+/*  canvas.addEventListener('touchmove', function (e) {
     findxy('move', e)
   }, false);
   canvas.addEventListener('touchstart', function (e) {
-    //prevent cursor change in Chrome when drawing
     e.preventDefault();
     findxy('down', e);
   }, false);
   canvas.addEventListener('touchend', function (e) {
     findxy('up', e)
-  }, false);
+  }, false);*/
+	// Set up touch events for mobile, etc
+	canvas.addEventListener("touchstart", function (e) {
+			mousePos = getTouchPos(canvas, e);
+	  var touch = e.touches[0];
+	  var mouseEvent = new MouseEvent("mousedown", {
+		clientX: touch.clientX,
+		clientY: touch.clientY
+	  });
+	  canvas.dispatchEvent(mouseEvent);
+	}, false);
+	canvas.addEventListener("touchend", function (e) {
+	  var mouseEvent = new MouseEvent("mouseup", {});
+	  canvas.dispatchEvent(mouseEvent);
+	}, false);
+	canvas.addEventListener("touchmove", function (e) {
+	  var touch = e.touches[0];
+	  var mouseEvent = new MouseEvent("mousemove", {
+		clientX: touch.clientX,
+		clientY: touch.clientY
+	  });
+	  canvas.dispatchEvent(mouseEvent);
+	}, false);
 
   /**
    * The clear button, defined by an HTML element with the id "jhr-clear".
@@ -6960,6 +6981,15 @@ function init() {
   setInterval(function () {
     directionalChangeTimer()
   }, 100);
+}
+
+// Get the position of a touch relative to the canvas
+function getTouchPos(canvasDom, touchEvent) {
+  var rect = canvasDom.getBoundingClientRect();
+  return {
+    x: touchEvent.touches[0].clientX - rect.left,
+    y: touchEvent.touches[0].clientY - rect.top
+  };
 }
 
 /**
