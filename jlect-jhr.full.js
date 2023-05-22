@@ -6757,38 +6757,38 @@ var kanji = [
   ['需', 'HV2VHHHHH3V2VV', 0],
   ['浄', '223V22HHV', 1],
   ['畳', 'V2VHHVHV2HHH', 0],
-  ['拭', 'HV3HHV322', 0]
-  ['植', 'HV3HHVV2HHHVH', 0]
-  ['植', 'HV3HHVV2HHH2', 0]
-  ['殖', 'H3V2HVV2HHH2', 1]
-  ['速', 'HVHHV322VH', 1]
-  ['側', '3VV2HHH32VV', 1]
-  ['俗', '3V3232V2H', 0]
-  ['俗', 'VV3232V2H', 0]
-  ['属', '2HV3V2HV2VH2', 0]
-  ['続', 'VV2V32HVH32', 0]
-  ['続', 'VV2V32HVHV232', 3]
-  ['戴', 'HVHVHVHHHVVH32232', 0]
-  ['伎', '3VHVV2', 0]
-  ['寛', 'VVHHVVV2HHH32', 0]
-  ['閑', 'V2HHVVHHHV32', 1]
-  ['款', 'HVHHHV323H32', 0]
-  ['棺', 'HV32VVH2HV2H', 0]
-  ['堪', 'HV3HVVHHH232', 0]
-  ['堪', 'HVHHVVHHH322', 0]
-  ['堪', 'HVHHVVHHHV32H', 0]
-  ['喚', 'V2H32V232H3H', 1]
-  ['患', 'VHHVHHV3222', 1]
-  ['陥', '23V3HVV2HH', 3]
-  ['陥', 'VV3HVV2HH', 3]
-  ['官', 'VVH2HVHH', 0]
-  ['罐', '3HHV2VHVVV2HV2H3V3HVHHH', 0]
-  ['渴', '223V2HH3V32H2', 0]
-  ['渴', '223V2HH32322', 1]
-  ['渴', '2V3V2HH32322', 1]
-  ['', '', 0]
-  ['', '', 0]
-  ['', '', 0]
+  ['拭', 'HV3HHV322', 0],
+  ['植', 'HV3HHVV2HHHVH', 0],
+  ['植', 'HV3HHVV2HHH2', 0],
+  ['殖', 'H3V2HVV2HHH2', 1],
+  ['速', 'HVHHV322VH', 1],
+  ['側', '3VV2HHH32VV', 1],
+  ['俗', '3V3232V2H', 0],
+  ['俗', 'VV3232V2H', 0],
+  ['属', '2HV3V2HV2VH2', 0],
+  ['続', 'VV2V32HVH32', 0],
+  ['続', 'VV2V32HVHV232', 3],
+  ['戴', 'HVHVHVHHHVVH32232', 0],
+  ['伎', '3VHVV2', 0],
+  ['寛', 'VVHHVVV2HHH32', 0],
+  ['閑', 'V2HHVVHHHV32', 1],
+  ['款', 'HVHHHV323H32', 0],
+  ['棺', 'HV32VVH2HV2H', 0],
+  ['堪', 'HV3HVVHHH232', 0],
+  ['堪', 'HVHHVVHHH322', 0],
+  ['堪', 'HVHHVVHHHV32H', 0],
+  ['喚', 'V2H32V232H3H', 1],
+  ['患', 'VHHVHHV3222', 1],
+  ['陥', '23V3HVV2HH', 3],
+  ['陥', 'VV3HVV2HH', 3],
+  ['官', 'VVH2HVHH', 0],
+  ['罐', '3HHV2VHVVV2HV2H3V3HVHHH', 0],
+  ['渴', '223V2HH3V32H2', 0],
+  ['渴', '223V2HH32322', 1],
+  ['渴', '2V3V2HH32322', 1],
+  ['', '', 0],
+  ['', '', 0],
+  ['', '', 0],
   ['', '', 0]
   // Check < 1500 https://en.wikipedia.org/wiki/List_of_j%C5%8Dy%C5%8D_kanji
 ];
