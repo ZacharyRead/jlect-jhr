@@ -33,7 +33,6 @@ Cons:
 
 * The library is stroke-oriented and does not handle cursive character input.
 * The dataset is incomplete, so it may fail at recognizing a large number of characters.
-* There is currently no touch support, so it will not work on mobile, tablet or other touch-screen-based devices.
 * It only supports drawing one character at a time.
 
 ## Contributing

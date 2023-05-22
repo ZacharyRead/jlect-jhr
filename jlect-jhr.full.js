@@ -6942,11 +6942,11 @@ function init() {
 		clientY: touch.clientY
 	  });
 	  canvas.dispatchEvent(mouseEvent);
-	}, false);
+	}, { passive: false });
 	canvas.addEventListener("touchend", function (e) {
 	  var mouseEvent = new MouseEvent("mouseup", {});
 	  canvas.dispatchEvent(mouseEvent);
-	}, false);
+	}, { passive: false });
 	canvas.addEventListener("touchmove", function (e) {
 	  var touch = e.touches[0];
 	  var mouseEvent = new MouseEvent("mousemove", {
@@ -6954,7 +6954,7 @@ function init() {
 		clientY: touch.clientY
 	  });
 	  canvas.dispatchEvent(mouseEvent);
-	}, false);
+	}, { passive: false });
 
   /**
    * The clear button, defined by an HTML element with the id "jhr-clear".
