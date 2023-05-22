@@ -6450,7 +6450,7 @@ var kanji = [
   ['讓', '', 0],
   ['釀', '', 0],
   ['觸', '', 0],
-  ['眞', '', 0],
+  ['眞', '32V2HHH232', 1],
   ['愼', '', 0],
   ['禍', 'VV2VV2VHV2V2H', 1],
   ['圖', 'V2VHHVHV2V2HHH', 1],
@@ -6871,19 +6871,19 @@ function draw() {
   ctx.shadowBlur = 0;
 }
 
-//angles and kanji arrays
+// Angles and kanji arrays
 var anglesArray = [''];
 var guessArray = [''];
 var fuzzyArray = [''];
 var similarityArray = [''];
 
-//timer values
+// Timer values
 var timeX = 0;
 var timeY = 0;
 var direction = 0;
 var dir_count = 0;
 
-//overlap counter
+// Overlap counter
 var overlap = 0;
 var line_num = 0;
 
@@ -6918,8 +6918,9 @@ function undo() {
      * @type {HTMLImageElement}
      */
     var oImg = new Image();
+	var canvas = document.getElementById("can"),
     oImg.onload = function () {
-      ctx.clearRect(0, 0, w, h);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(oImg, 0, 0);
     };
     oImg.src = restorePoints[saver_count - 1];
@@ -7064,7 +7065,7 @@ function erase() {
 
   testk = '';
 
-  //erase timer values
+  // Erase timer values.
   timeX = 0;
   timeY = 0;
   line_num = 0;
