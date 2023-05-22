@@ -15,6 +15,7 @@ body {
 }
 canvas {
     border: 1px solid #000;
+	touch-action: none;
 }
 #handwriting-results {
     display: table-cell;

@@ -6997,17 +6997,17 @@ document.body.addEventListener("touchstart", function (e) {
   if (e.target == canvas) {
     e.preventDefault();
   }
-}, false);
+}, {passive: false});
 document.body.addEventListener("touchend", function (e) {
   if (e.target == canvas) {
     e.preventDefault();
   }
-}, false);
+}, {passive: false});
 document.body.addEventListener("touchmove", function (e) {
   if (e.target == canvas) {
     e.preventDefault();
   }
-}, false);
+}, {passive: false});
 
 /**
  * This function gets called when a user is drawing on the canvas.
