@@ -7793,13 +7793,14 @@ function findxy(res, e) {
         if (slength_count > 16) {
           break;
         }
-          const element = kanji[i];
-          if ((last_kanji !== kanji[i][0]) && (typeof anglesArray[3] !== 'undefined')) {
-            if ((kanji[i][1].length == (anglesArray.length - 1)) && (kanji[i][1].startsWith(anglesArray[3]) == true)) {
-              slength.innerHTML = slength.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
-              slength_count += 1;
+        if ((typeof anglesArray[3] !== 'undefined')) {
+          if ((kanji[i][1].length == (anglesArray.length - 1)) && (kanji[i][1].startsWith(anglesArray[3]) == true)) {
+            if (last_kanji !== kanji[i][0]) {
+                slength.innerHTML = slength.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
+                slength_count += 1;
             }
           }
+        }
         last_kanji = kanji[i][0];
       }
     }
