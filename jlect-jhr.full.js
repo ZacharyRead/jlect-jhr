@@ -7789,20 +7789,20 @@ function findxy(res, e) {
 
     var slength_count = 0;
     if (line_num > 1) {
-		for (i = 0; i < kanji.length; i++) {
-			if (slength_count > 16) {
-			  break;
-			}
-			const element = kanji[i];
-			if ((last_kanji !== kanji[i][0]) && (typeof anglesArray[3] !== 'undefined')) {
-				if ((kanji[i][1].length == anglesArray.length) && (kanji[i][1].startsWith(anglesArray[3]) == true)) {
-					slength.innerHTML = slength.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
-					slength_count += 1;
-				}
-			}
-			last_kanji = kanji[i][0];
-		}
-	}
+      for (i = 0; i < kanji.length; i++) {
+        if (slength_count > 16) {
+          break;
+        }
+          const element = kanji[i];
+          if ((last_kanji !== kanji[i][0]) && (typeof anglesArray[3] !== 'undefined')) {
+            if ((kanji[i][1].length == (anglesArray.length - 1)) && (kanji[i][1].startsWith(anglesArray[3]) == true)) {
+              slength.innerHTML = slength.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
+              slength_count += 1;
+            }
+          }
+        last_kanji = kanji[i][0];
+      }
+    }
     slengthArray.push(slength.innerHTML);
 
     flag = false;
