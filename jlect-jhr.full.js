@@ -357,6 +357,14 @@ var kanji = [
   ['食', '3222HHV32', 1],
   ['食', '32VHHHV32', 1],
   ['食', '3H2HH3V3H', 1],
+  ['食', '3222HH232', 1],
+  ['食', '32VHHH232', 1],
+  ['食', '32HHHH232', 1],
+  ['食', '322H3H232', 1],
+  ['食', '322HH3V32', 1],
+  ['食', '32VHH3232', 1],
+  ['食', '322HHH232', 1],
+  ['食', '32H2HHV32', 1],
   ['鬮', 'VHVHHHVHHV32VHHH2V22H2HH32', 1],
   ['鸕', 'HVHVH2V2HHVVHVVHV2HHHV2VV22', 6],
   ['鸕', 'HVHH2V2HVHVHVVH3V2HHH2VV22', 3],
@@ -427,6 +435,7 @@ var kanji = [
   ['む', 'H22', 1],
   ['め', '2V', 1],
   ['も', 'HH2', 0],
+  ['も', '2HH', 0],
   ['母', '2V22H', 2],
   ['母', 'V222HH', 1],
   ['母', 'V2VHVH', 3],
@@ -442,6 +451,8 @@ var kanji = [
   ['無', 'VHHVVVVH3222', 0],
   ['無', '3HVVVVHH3V22', 0],
   ['無', '3HHVVVVH3222', 2],
+  ['無', '3VHVVHVH3222', 2],
+  ['無', '3VHVVVHH3222', 2],
   ['目', 'V2HHH', 0],
   ['目', 'VHVHHH', 0],
   ['目', 'VVHHH', 0],
@@ -1003,6 +1014,7 @@ var kanji = [
   ['里', 'V2VHHHH', 0],
   ['部', 'VH23HV2HVV', 3],
   ['部', 'VH23HV2HVV', 1],
+  ['部', 'VH23HV2H2VV', 1],
   ['常', '2V3V2V2HVVH', 1],
   ['常', '2V32HV2HV2V', 1],
   ['湯', '223V2HHHV23V', 1],
@@ -1478,6 +1490,7 @@ var kanji = [
   ['会', '32HH22', 1],
   ['会', '32HH2V', 1],
   ['汽', '2233HH2', 0],
+  ['汽', '223VHH2', 0],
   ['晴', 'V2HHHVHHV2HH', 0],
   ['国', 'V2HVHHHH', 0],
   ['国', 'V2HVHH2H', 0],
@@ -1530,6 +1543,10 @@ var kanji = [
   ['題', 'V2HHHVH3HH3V2HHH32', 0],
   ['列', 'H3V2VV', 1],
   ['能', 'V2V2HH3232', 1],
+  ['能', 'VVV2HH3232', 1],
+  ['能', 'V2VVHH3232', 1],
+  ['能', 'VVVVHHH2H2', 1],
+  ['能', 'V2VVHHH2H2', 1],
   ['謝', '2HHHV2H3VVHHH3HV2', 0],
   ['謝', 'HHHHV2H3VVHHH3HV2', 0],
   ['瓦', 'H3H22', 0],
@@ -1571,6 +1588,7 @@ var kanji = [
   ['方', 'VHV3', 1],
   ['方', 'VH32', 1],
   ['方', '3H23', 1],
+  ['方', 'H32', 0],
   ['調', 'VHHHV2HV2HVHV2H', 0],
   ['調', '2HHHV2HV2HVHV2H', 0],
   ['調', 'HHHHV2HV2HVHV2H', 0],
@@ -1819,6 +1837,7 @@ var kanji = [
   ['辺', '232VH', 4],
   ['聞', 'V2HHVVHHHVHHHV', 1],
   ['客', 'VVH332V2H', 1],
+  ['客', 'VVH3V2V2H', 1],
   ['類', '23HV32H32H3V2HHH32', 1],
   ['義', '23HHVH3HV3V32', 0],
   ['蹴', 'V2HVH3HVHV2HV3HHV22', 0],
@@ -3173,9 +3192,13 @@ var kanji = [
   ['延', 'VH3VHVH', 3],
   ['終', 'VV2V323V222', 4],
   ['終', '2V2V323V222', 4],
+  ['終', 'VV2VV23V222', 3],
   ['隔', 'VVVHV2HV232HV', 1],
   ['隔', 'VVHV2HV232HV', 2],
   ['効', 'VH3232V3', 1],
+  ['効', 'VH32322V', 1],
+  ['効', 'VH323223', 1],
+  ['効', 'VH3232VV', 1],
   ['勤', 'HVVVHHVHH3V3', 1],
   ['勤', 'HVVVHVHH3V3', 1],
   ['勤', 'HVVVHHVHHHV3', 1],
@@ -3285,6 +3308,7 @@ var kanji = [
   ['紙', 'VV2V323VHV', 2],
   ['紙', 'VV2V32HVH2', 2],
   ['紙', 'VV2V323VH2', 2],
+  ['紙', 'V32V323VH2', 2],
   ['触', '32V2VHHV2HV32', 2],
   ['触', '32V2VHHV2HVH2', 2],
   ['感', 'H3V2HV323H22', 0],
@@ -4013,6 +4037,8 @@ var kanji = [
   ['帝', 'VH23V2V2V', 0],
   ['帝', 'VH23VHV2V', 0],
   ['泣', '22VVH23H', 0],
+  ['泣', '223VH23H', 0],
+  ['泣', 'VV3VH23H', 0],
   ['嬌', 'VVH3H32V2HV2V2H', 1],
   ['嬌', 'HVV3H32V2HV2V2H', 1],
   ['嬌', 'V2H3H32V2HV2V2H', 1],
@@ -4737,6 +4763,8 @@ var kanji = [
   ['封', 'HVHHV3HV2', 0],
   ['峠', 'V2VHVHHV2', 0],
   ['峡', 'V2VH23HV32', 0],
+  ['峡', 'V2VHV3HV2', 0],
+  ['峡', 'V2VH23HV2', 0],
   ['帥', '32HV2HV2V', 0],
   ['帥', '32HV2HVV2', 0],
   ['恨', '3V22HHV32', 0],
@@ -4950,6 +4978,9 @@ var kanji = [
   ['袤', 'VH22H3VH232', 2],
   ['逐', 'H3V333H2VH', 2],
   ['雷', 'HV2VHHHHV2VHH', 0],
+  ['雷', 'HVHVH22HVHVHH', 0],
+  ['雷', 'HV2VHHHHVHVHH', 0],
+  ['雷', 'HV2V22HHV2VHH', 0],
   ['鞱', 'HVVHV2HVHH322VHVHH', 0],
   ['廳', 'VHVHVHHHVHVV2VVHHVHHH3222', 1],
   ['殪', 'H3V2HVHVHHV2HHVH', 1],
@@ -5349,7 +5380,6 @@ var kanji = [
   ['敍', '3HHHV3HVHV2', 1],
   ['敍', '3HHVH32HVV2', 1],
   ['敍', '32HHV32VHV2', 0],
-  ['鉶', '32HHV23H', 0],
   ['鉶', '32HHV23HHH3VVV', 0],
   ['鉶', '32HHV233H3VHVV', 0],
   ['鉶', '32HHV233HVVHVV', 0],
@@ -6868,8 +6898,11 @@ var kanji = [
   ['伎', '3VHVV2', 0],
   ['寛', 'VVHHVVV2HHH32', 0],
   ['閑', 'V2HHVVHHHV32', 1],
+  ['閑', 'V2HHV2HHHV32', 1],
   ['款', 'HVHHHV323H32', 0],
+  ['款', 'HVHHHV32VH32', 1],
   ['棺', 'HV32VVH2HV2H', 0],
+  ['棺', 'HV32VVHHHVHH', 0],
   ['堪', 'HV3HVVHHH232', 0],
   ['堪', 'HVHHVVHHH322', 0],
   ['堪', 'HVHHVVHHHV32H', 0],
@@ -6891,6 +6924,107 @@ var kanji = [
   ['卷', '32HH3222', 0],
   ['卷', '32HH32H2', 0],
   ['卷', '32HVH2H2', 0],
+  ['屑', '2HVVHHV2HH', 0],
+  ['屑', 'HHVVHHV2HH', 0],
+  ['屑', 'HHVV32V2HH', 1],
+  ['屑', '2HVV32V2HH', 1],
+  ['剌', 'HV2HV32VV', 0],
+  ['剌', 'H2VV2H32VV', 0],
+  ['剌', 'HVV2H3HVV', 0],
+  ['剌', 'HVHVH32VV', 0],
+  ['剌', 'HVHHV32VV', 0],
+  ['剌', 'HVV2H32VV', 0],
+  ['奇', 'H32HV2HV', 0],
+  ['峽', '', 0],
+  ['挾', '', 0],
+  ['狹', '', 0],
+  ['恐', '', 0],
+  ['脅', '', 0],
+  ['鄕', '', 0],
+  ['境', '', 0],
+  ['矯', '', 0],
+  ['暁', '', 0],
+  ['極', '', 0],
+  ['琴', '', 0],
+  ['窟', '', 0],
+  ['勲', '', 0],
+  ['薰', '', 0],
+  ['径', '', 0],
+  ['茎', '', 0],
+  ['型', '', 0],
+  ['契', '', 0],
+  ['恵', '', 0],
+  ['啓', '', 0],
+  ['渓', '', 0],
+  ['経', '', 0],
+  ['蛍', '', 0],
+  ['携', '', 0],
+  ['継', '', 0],
+  ['詣', '', 0],
+  ['慶', '', 0],
+  ['憬', '', 0],
+  ['稽', '', 0],
+  ['隙', '', 0],
+  ['劇', '', 0],
+  ['桁', '', 0],
+  ['傑', '', 0],
+  ['潔', '', 0],
+  ['券', '', 0],
+  ['建', '', 0],
+  ['嫌', '', 0],
+  ['権', '', 0],
+  ['限', '', 0],
+  ['舷', '', 0],
+  ['厳', '', 0],
+  ['股', '', 0],
+  ['孤', '', 0],
+  ['弧', '', 0],
+  ['枯', '', 0],
+  ['個', '', 0],
+  ['庫', '', 0],
+  ['錮', '', 0],
+  ['碁', '', 0],
+  ['勾', '', 0],
+  ['效', '', 0],
+  ['幸', '', 0],
+  ['拘', '', 0],
+  ['肯', '', 0],
+  ['侯', '', 0],
+  ['厚', '', 0],
+  ['恒', '', 0],
+  ['洪', '', 0],
+  ['郊', '', 0],
+  ['貢', '', 0],
+  ['控', '', 0],
+  ['梗', '', 0],
+  ['黄', '', 0],
+  ['喉', '', 0],
+  ['慌', '', 0],
+  ['絞', '', 0],
+  ['項', '', 0],
+  ['溝', '', 0],
+  ['鉱', '', 0],
+  ['鑛', '', 0],
+  ['穀', '', 0],
+  ['駒', '', 0],
+  ['昆', '', 0],
+  ['婚', '', 0],
+  ['痕', '', 0],
+  ['紺', '', 0],
+  ['沙', '', 0],
+  ['砂', '', 0],
+  ['唆', '', 0],
+  ['挫', '', 0],
+  ['砕', '', 0],
+  ['栽', '', 0],
+  ['彩', '', 0],
+  ['濟', '', 0],
+  ['斎', '', 0],
+  ['齋', '', 0],
+  ['劑', '', 0],
+  ['', '', 0],
+  ['', '', 0],
+  ['', '', 0],
   ['', '', 0],
   ['', '', 0],
   ['', '', 0],
@@ -7138,6 +7272,7 @@ var anglesArray = [''];
 var guessArray = [''];
 var fuzzyArray = [''];
 var similarityArray = [''];
+var slengthArray = [''];
 
 // Timer values
 var timeX = 0;
@@ -7223,6 +7358,15 @@ function undo() {
         }
       }
 
+      if (slengthArray.length > 0) {
+        slengthArray.pop();
+        var slengthHTMLElement = document.getElementById('jhr-slength');
+        last_element = slengthArray[slengthArray.length - 1];
+        if (isValidElement(slengthHTMLElement)) {
+          slengthHTMLElement.innerHTML = last_element;
+        }
+      }
+
       if (dir_count) {
         dir_count -= 1;
         var directionHTMLElement = document.getElementById('direction');
@@ -7285,6 +7429,17 @@ function erase() {
   }
   similarityArray.length = 0;
   similarityArray = [''];
+
+  /**
+   * The div element containing the list of start-length matches.
+   * @type {HTMLElement}
+   */
+  var slengthHTMLElement = document.getElementById('jhr-slength');
+  if (isValidElement(slengthHTMLElement)) {
+    slengthHTMLElement.innerHTML = '';
+  }
+  slengthArray.length = 0;
+  slengthArray = [''];
 
   /**
    * The div element displaying the stroke angles.
@@ -7626,6 +7781,29 @@ function findxy(res, e) {
     }
 
     similarityArray.push(similarity.innerHTML);
+
+    // Start-length guesses
+    var slength	= document.getElementById('jhr-slength');
+    slength.innerHTML = " ";
+    last_kanji = '';
+
+    var slength_count = 0;
+    if (line_num > 1) {
+		for (i = 0; i < kanji.length; i++) {
+			if (slength_count > 16) {
+			  break;
+			}
+			const element = kanji[i];
+			if ((last_kanji !== kanji[i][0]) && (typeof anglesArray[3] !== 'undefined')) {
+				if ((kanji[i][1].length == anglesArray.length) && (kanji[i][1].startsWith(anglesArray[3]) == true)) {
+					slength.innerHTML = slength.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
+					slength_count += 1;
+				}
+			}
+			last_kanji = kanji[i][0];
+		}
+	}
+    slengthArray.push(slength.innerHTML);
 
     flag = false;
     timeX = 0;
