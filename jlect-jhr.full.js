@@ -7009,18 +7009,22 @@ function init() {
 
   // Add mouse-related event listeners for when the user clicks on the canvas.
   canvas.addEventListener('mousemove', function (e) {
-    findxy('move', e)
+    e.stopPropagation();
+    findxy('move', e);
   }, false);
   canvas.addEventListener('mousedown', function (e) {
     // Prevent cursor change in Chrome when drawing.
+    e.stopPropagation();
     e.preventDefault();
     findxy('down', e);
   }, false);
   canvas.addEventListener('mouseup', function (e) {
-    findxy('up', e)
+    e.stopPropagation();
+    findxy('up', e);
   }, false);
   canvas.addEventListener('mouseout', function (e) {
-    findxy('out', e)
+    e.stopPropagation();
+    findxy('out', e);
   }, false);
   
   // Add touch-related event listeners for when the user clicks on the canvas.
