@@ -5595,6 +5595,7 @@ var kanji = [
   ['佚', '3V3HHV2', 0],
   ['丼', 'HHVVH', 0],
   ['丼', 'HHVV2', 0],
+  ['丼', 'VHV2H', 0],
   ['昱', 'V2HHVH23H', 1],
   ['它', 'VVH32', 0],
   ['它', 'VVHH2', 0],
@@ -5616,6 +5617,7 @@ var kanji = [
   ['夊', '3V2', 1],
   ['韭', 'VVHHHHHHH', 0],
   ['韭', 'HHHVVHHHH', 0],
+  ['韭', 'HHHVHHHVH', 0],
   ['韮', 'HVVVVHHHHHHH', 0],
   ['韮', 'HVVHHHVVHHHH', 0],
   ['奉', 'HHH32HHV', 0],
@@ -5680,6 +5682,8 @@ var kanji = [
   ['道', '23H3V2HHH2VH', 3],
   ['道', '23H3V2HH2VH', 3],
   ['程', '3HV32V2HHHHV', 0],
+  ['程', '3HV32V2HHHVH', 0],
+  ['程', '3HV3HV2HHHVH', 0],
   ['嶋', 'V2V3V2HHH23222', 1],
   ['蛺', 'V2HVH2H3232HV2', 0],
   ['蛺', 'V2HVHVH3232HV2', 0],
@@ -7245,6 +7249,7 @@ function undo() {
 function erase() {
   // Clear the entire canvas.
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.reset();
   // Redraw the grid lanes on the canvas.
   drawGridLines();
 
