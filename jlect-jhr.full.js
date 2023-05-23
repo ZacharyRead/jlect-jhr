@@ -365,6 +365,7 @@ var kanji = [
   ['食', '32VHH3232', 1],
   ['食', '322HHH232', 1],
   ['食', '32H2HHV32', 1],
+  ['食', '32V2HH232', 0],
   ['鬮', 'VHVHHHVHHV32VHHH2V22H2HH32', 1],
   ['鸕', 'HVHVH2V2HHVVHVVHV2HHHV2VV22', 6],
   ['鸕', 'HVHH2V2HVHVHVVH3V2HHH2VV22', 3],
@@ -952,7 +953,6 @@ var kanji = [
   ['喪', 'HVV2HV2HHVH32', 0],
   ['喪', 'HV2HV2HVHV332', 0],
   ['喪', 'HVV2HV2HH23', 0],
-  ['食', '32V2HH232', 0],
   ['飲', '32HHH23232', 0],
   ['飲', '32V2HH223232', 1],
   ['飲', '32VV2HH323232', 2],
@@ -7798,10 +7798,10 @@ function findxy(res, e) {
             if (last_kanji !== kanji[i][0]) {
                 slength.innerHTML = slength.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
                 slength_count += 1;
+				last_kanji = kanji[i][0];
             }
           }
         }
-        last_kanji = kanji[i][0];
       }
     }
     slengthArray.push(slength.innerHTML);
