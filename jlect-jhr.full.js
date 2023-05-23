@@ -6991,7 +6991,7 @@ function drawGridLines() {
  * Initiate the canvas and set event listeners on page load.
  * @returns {undefined}
  */
-function init() {
+function jhr_init() {
   canvas = /** @type {HTMLCanvasElement} */ document.getElementById('can');
   if (!canvas || !(canvas instanceof HTMLCanvasElement)) {
     console.log('[JHR library] Unable to initiate canvas event listeners. No canvas detected.');
@@ -7009,21 +7009,17 @@ function init() {
 
   // Add mouse-related event listeners for when the user clicks on the canvas.
   canvas.addEventListener('mousemove', function (e) {
-    e.stopPropagation();
     findxy('move', e);
   }, false);
   canvas.addEventListener('mousedown', function (e) {
     // Prevent cursor change in Chrome when drawing.
-    e.stopPropagation();
     e.preventDefault();
     findxy('down', e);
   }, false);
   canvas.addEventListener('mouseup', function (e) {
-    e.stopPropagation();
     findxy('up', e);
   }, false);
   canvas.addEventListener('mouseout', function (e) {
-    e.stopPropagation();
     findxy('out', e);
   }, false);
   
@@ -7752,5 +7748,5 @@ function isValidElement(obj) {
 }
 
 window.addEventListener("load", function(){
-  init();
+  jhr_init();
 });
