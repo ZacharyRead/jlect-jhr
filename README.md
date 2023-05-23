@@ -26,7 +26,7 @@ Pros:
 
 * The library is open-sourced, so anyone can contribute to the project to improve it and anyone can use it as long as the license conditions are met.
 * The library has no dependencies, which makes it easy to deploy in comparison to other tools.
-* The library can be easily modified and expanded. The "example.html" file even provides data output that you can use to expand the existing dataset.
+* The library can be easily modified and expanded. The "example.html" file provides data output that you can use to expand the existing dataset.
 * The library, while being stroke-oriented, considers the fact that users are likely to draw characters in the wrong stroke order.
 
 Cons:
