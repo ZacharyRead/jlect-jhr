@@ -394,6 +394,9 @@ var kanji = [
   ['魚', '32V2VHH3VV2', 2],
   ['魚', '32V2VHH3222', 2],
   ['魚', '3HV2VHH3V22', 2],
+  ['魚', 'V2VHVHH3222', 2],
+  ['魚', '32V2VHH322H', 1],
+  ['魚', 'VHV2VHH3222', 1],
   ['田', 'V2VHH', 0],
   ['田', 'V2HVH', 0],
   ['一', 'H', 0],
@@ -5768,6 +5771,7 @@ var kanji = [
   ['程', '3HV32V2HHHHV', 0],
   ['程', '3HV32V2HHHVH', 0],
   ['程', '3HV3HV2HHHVH', 0],
+  ['程', '3HV32VHHHHVH', 0],
   ['嶋', 'V2V3V2HHH23222', 1],
   ['蛺', 'V2HVH2H3232HV2', 0],
   ['蛺', 'V2HVHVH3232HV2', 0],
@@ -5817,6 +5821,7 @@ var kanji = [
   ['葱', 'HVV3V233VHVV', 0],
   ['葱', 'HVV32233VHVV', 0],
   ['皈', '3V2HHVHV2', 1],
+  ['皈', '3V2HHHVV2', 1],
   ['皈', '3V2HHHVH32', 0],
   ['皈', '3VV3HHVV2', 0],
   ['炭', 'VHVH33332', 0],
@@ -7375,7 +7380,7 @@ function draw() {
   ctx.shadowColor = 'black';
   ctx.shadowOffsetX = 0;
   ctx.shadowOffsetY = 0;
-  ctx.shadowBlur = 2;
+  ctx.shadowBlur = 1;
 
   ctx.closePath();
   ctx.stroke();

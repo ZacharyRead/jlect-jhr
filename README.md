@@ -16,9 +16,11 @@ Example:
 The library and all associated files provided in the official repository are covered by the following Creative Commons license:
 * Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0): https://creativecommons.org/licenses/by-sa/3.0/
 
-## Live example
+## Live demo
 
-For a live example of the library in use, you can visit https://www.jlect.com and click on the "字 (draw)" button beside the search bar. A simplified example is also provided in the file "example.html" found in the official repository https://github.com/ZacharyRead/jlect-jhr.
+For a live demo, please check out https://zacharyread.github.io/jlect-jhr/example.html
+
+For an example implementation, you can visit https://www.jlect.com and click on the "字 (draw)" button beside the search bar.
 
 ## Advantages and disadvantages
 
