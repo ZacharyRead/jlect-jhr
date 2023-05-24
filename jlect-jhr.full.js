@@ -7157,7 +7157,7 @@ var currX = 0;
 var prevY = 0;
 var currY = 0;
 var dot_flag = false;
-var y = 2.5;
+//var y = 2.5;
 
 /**
  * Draw the canvas grid lines.
@@ -7492,7 +7492,7 @@ function undo() {
     }
 
     if (testk) {
-      testk = testk.substring(0, testk.length - 4);
+      testk = testk.substring(0, testk.length - 1);
     }
   }
 }
@@ -7705,11 +7705,11 @@ function findxy(res, e) {
       rounded_degrees_str = 'V';
     }
 
-    var theDiv = document.getElementById('jhr-angles');
-    theDiv.innerHTML = theDiv.innerHTML + rounded_degrees_str;
-    anglesArray.push(theDiv.innerHTML);
+    var anglesHTMLElement = document.getElementById('jhr-angles');
+    anglesHTMLElement.innerHTML = anglesHTMLElement.innerHTML + rounded_degrees_str;
+    anglesArray.push(anglesHTMLElement.innerHTML);
 
-    var guess = document.getElementById('jhr-guess');
+    var guessHTMLElement = document.getElementById('jhr-guess');
     var guess_kanji = 0;
 
     var last_kanji = '';
@@ -7721,18 +7721,18 @@ function findxy(res, e) {
         if (kanji[i][1] === testk) {
           guess_kanji += 1;
           if (guess_kanji === 1) {
-            guess.innerHTML = ' ';
+            guessHTMLElement.innerHTML = ' ';
           }
 
           if (kanji[i][2] === dir_count) {
-            guess.innerHTML = guess.innerHTML + "<a class=\"kmatch\" style=\"background-color:yellow;font-weight:bold;\">" + kanji[i][0] + "</a>";
+            guessHTMLElement.innerHTML = guessHTMLElement.innerHTML + "<a class=\"kmatch\" style=\"background-color:yellow;font-weight:bold;\">" + kanji[i][0] + "</a>";
           }
           else {
             if (line_num > 2) {
-              guess.innerHTML = guess.innerHTML + "<a class=\"kmatch\" style=\"background-color:#FFFFBB;font-weight:bold;\">" + kanji[i][0] + "</a>";
+              guessHTMLElement.innerHTML = guessHTMLElement.innerHTML + "<a class=\"kmatch\" style=\"background-color:#FFFFBB;font-weight:bold;\">" + kanji[i][0] + "</a>";
             }
             else {
-              guess.innerHTML = guess.innerHTML + "<a class=\"kmatch\" style=\"font-weight:bold;\">" + kanji[i][0] + "</a>";
+              guessHTMLElement.innerHTML = guessHTMLElement.innerHTML + "<a class=\"kmatch\" style=\"font-weight:bold;\">" + kanji[i][0] + "</a>";
             }
 
             last_kanji = kanji[i][0];
@@ -7741,21 +7741,21 @@ function findxy(res, e) {
         else if (kanji[i][1].lastIndexOf(testk, 0) === 0 && line_num > 3) {
           guess_kanji += 1;
           if (guess_kanji === 1) {
-            guess.innerHTML = " ";
+            guessHTMLElement.innerHTML = " ";
           }
 
-          guess.innerHTML = guess.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
+          guessHTMLElement.innerHTML = guessHTMLElement.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
 
           last_kanji = kanji[i][0];
         }
       }
     }
 
-    guessArray.push(guess.innerHTML);
+    guessArray.push(guessHTMLElement.innerHTML);
 
     //count fuzzy
-    var fuzzy = document.getElementById('jhr-fuzzy');
-    fuzzy.innerHTML = " ";
+    var fuzzyHTMLElement = document.getElementById('jhr-fuzzy');
+    fuzzyHTMLElement.innerHTML = " ";
 
     /**
      * Number of vertical strokes (|).
@@ -7839,7 +7839,7 @@ function findxy(res, e) {
                 var c_k = count_diagonal - kanji_vert;
                 if ((k_c < 2 && k_c > 0) || (c_k < 2 && c_k > 0)) {
                   if (/^[\u4e00-\u9fbf]+$/.test(kanji[i][0])) {
-                    fuzzy.innerHTML = fuzzy.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
+                    fuzzyHTMLElement.innerHTML = fuzzyHTMLElement.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
                     fuzzy_count += 1;
                   }
                 }
@@ -7847,7 +7847,7 @@ function findxy(res, e) {
               }
               else {
                 if (/^[\u4e00-\u9fbf]+$/.test(kanji[i][0])) {
-                  fuzzy.innerHTML = fuzzy.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
+                  fuzzyHTMLElement.innerHTML = fuzzyHTMLElement.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
                   fuzzy_count += 1;
                 }
               }
@@ -7858,7 +7858,7 @@ function findxy(res, e) {
             var ck_h = kanji_h.length - count_h.length;
             if ((ck_v >= 0 && ck_v < 2) && (ck_h >= 0 && ck_h < 3) && (dir_count <= kanji[i][2]) && (fuzzy_count < 16)) {
               if (/^[\u4e00-\u9fbf]+$/.test(kanji[i][0])) {
-                fuzzy.innerHTML = fuzzy.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
+                fuzzyHTMLElement.innerHTML = fuzzyHTMLElement.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
                 fuzzy_count += 1;
               }
             }
@@ -7868,11 +7868,11 @@ function findxy(res, e) {
       }
     }
 
-    fuzzyArray.push(fuzzy.innerHTML);
+    fuzzyArray.push(fuzzyHTMLElement.innerHTML);
 
     //count similarity
-    var similarity = document.getElementById('jhr-similarity');
-    similarity.innerHTML = " ";
+    var similarityHTMLElement = document.getElementById('jhr-similarity');
+    similarityHTMLElement.innerHTML = " ";
     last_kanji = '';
 
     var similarity_count = 0;
@@ -7884,7 +7884,7 @@ function findxy(res, e) {
 
         if (last_kanji !== kanji[i][0]) {
           if (kanji[i][1].indexOf(testk) > -1) {
-            similarity.innerHTML = similarity.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
+            similarityHTMLElement.innerHTML = similarityHTMLElement.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
             similarity_count += 1;
           }
         }
@@ -7892,7 +7892,7 @@ function findxy(res, e) {
       }
     }
 
-    similarityArray.push(similarity.innerHTML);
+    similarityArray.push(similarityHTMLElement.innerHTML);
 
     // Start-length guesses
     var slength	= document.getElementById('jhr-slength');
