@@ -270,6 +270,7 @@ var kanji = [
   ['枕', 'HV32VHV2', 2],
   ['宛', 'VVH3V22H2', 2],
   ['宛', 'VVH3V222', 3],
+  ['宛', 'VH3V222', 3],
   ['蜜', 'VVH3H223VHHVHV', 1],
   ['蜜', 'VVH322H3V2HVH2', 0],
   ['蜜', 'VVH322H3VHHVH2', 3],
@@ -7744,11 +7745,11 @@ function findxy(res, e) {
           }
 
           if (kanji[i][2] === dir_count) {
-            guessHTMLElement.innerHTML = guessHTMLElement.innerHTML + "<a class=\"kmatch\" style=\"background-color:yellow;font-weight:bold;\">" + kanji[i][0] + "</a>";
+            guessHTMLElement.innerHTML = "<a class=\"kmatch\" style=\"background-color:yellow;font-weight:bold;\">" + kanji[i][0] + "</a>" + guessHTMLElement.innerHTML;
           }
           else {
             if (line_num > 2) {
-              guessHTMLElement.innerHTML = guessHTMLElement.innerHTML + "<a class=\"kmatch\" style=\"background-color:#FFFFBB;font-weight:bold;\">" + kanji[i][0] + "</a>";
+              guessHTMLElement.innerHTML = "<a class=\"kmatch\" style=\"background-color:#FFFFBB;font-weight:bold;\">" + kanji[i][0] + "</a>" + guessHTMLElement.innerHTML;
             }
             else {
               guessHTMLElement.innerHTML = guessHTMLElement.innerHTML + "<a class=\"kmatch\" style=\"font-weight:bold;\">" + kanji[i][0] + "</a>";
