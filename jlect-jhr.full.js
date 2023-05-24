@@ -7479,6 +7479,7 @@ function undo() {
     }
 
     // @todo: Fix this, as it subtracts regardless of actual previous status.
+	// @todo: Also do the same for the "overlap" data variable.
     if (dir_count) {
       dir_count -= 1;
       var directionHTMLElement = document.getElementById('jhr-direction');
