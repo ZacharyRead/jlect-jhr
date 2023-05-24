@@ -197,6 +197,7 @@ var kanji = [
   ['鳥', 'VV2HHH2H', 1],
   ['鳥', '22HHVH23222', 2],
   ['鳥', '3V2HHH232H2', 2],
+  ['鳥', 'V2HH2H3V22', 2],
   ['漢', '223HVVVHHV2HH', 0],
   ['漢', '22VHVVVHHV2HH', 0],
   ['漢', '22VHVVV2HVHH2', 0],
@@ -7871,14 +7872,15 @@ function findxy(res, e) {
        * Retrieves the pixel data of an area on the current canvas.
        * @type {ImageData}
        */
-      var imgData = ctx.getImageData(currX, currY, 2, 2);
+      var imgData = ctx.getImageData(currX, currY, 1, 1);
+
       /**
-       * Retrieves the alpha property of the RGBA value of imgData.
+       * Retrieves the red property of the RGBA value of imgData.
        * Value can be between 0 and 255.
        * @type {number}
        */
-      var alpha = imgData.data[3];
-      if (alpha) {
+      var red = imgData.data[0];
+      if (red) {
         overlap += 1;
         var ol_div = document.getElementById('overlap');
         ol_div.innerHTML = overlap;
