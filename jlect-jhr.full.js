@@ -1567,6 +1567,7 @@ var kanji = [
   ['能', 'V2VVHH3232', 1],
   ['能', 'VVVVHHH2H2', 1],
   ['能', 'V2VVHHH2H2', 1],
+  ['能', '22V2HH3232', 1],
   ['謝', '2HHHV2H3VVHHH3HV2', 0],
   ['謝', 'HHHHV2H3VVHHH3HV2', 0],
   ['瓦', 'H3H22', 0],
@@ -2268,6 +2269,9 @@ var kanji = [
   ['亀', '32V2HH2', 0],
   ['龜', '32V2HH2', 0],
   ['亀', '32V2HHV2HH2', 0],
+  ['亀', '32V2VHHV2HH2', 0],
+  ['亀', '32VHHHVHHH2', 0],
+  ['亀', '3HVHHHVHHH2', 0],
   ['材', 'HV32HV3', 0],
   ['材', 'HV3HHV3', 0],
   ['短', '3HHV2HV2HVVH', 0],
@@ -2375,6 +2379,7 @@ var kanji = [
   ['笑', '3HV3HV3H32', 0],
   ['笑', '3H23HV3H32', 0],
   ['笑', '3H23H23H32', 0],
+  ['笑', '3H23H3HH32', 0],
   ['譲', '2HHHV2HVH32HVVHH3232', 0],
   ['譲', 'VHHHV2HVH32HVVHH3232', 0],
   ['譲', 'HHHHV2HVH32HVVHH3232', 0],
@@ -2478,6 +2483,7 @@ var kanji = [
   ['富', 'VVHHVHHV2VHH', 0],
   ['富', 'VVHHVVV2VHH', 0],
   ['冨', 'VHHV2HV2VHH', 0],
+  ['冨', 'VVHHV2HV2VHH', 0],
   ['認', '2HHHV2HV32V222', 0],
   ['認', 'VHHHV2HV32V222', 0],
   ['認', 'HHHHV2HV32V222', 0],
@@ -2503,6 +2509,8 @@ var kanji = [
   ['鹿', 'VHVVVHHH232', 0],
   ['鹿', 'VH3HVVH3232', 0],
   ['新', 'VH2VHHV3H3VHV', 0],
+  ['新', 'VH23HHV3HHVHV', 0],
+  ['新', 'VH23HHV323VHV', 0],
   ['辛', 'VH23HHV', 0],
   ['優', '3VH3V2HHHVV32223V2', 2],
   ['優', '3VHVV2HHHVV32223V2', 2],
@@ -2867,6 +2875,7 @@ var kanji = [
   ['職', 'HVHHHVVH23HV2HHV32', 0],
   ['禁', 'HV32HV32HHV32', 0],
   ['児', 'VV2HH32', 0],
+  ['児', 'VV2HHV2', 0],
   ['聀', 'HVHH3VH232', 0],
   ['聀', 'HVHHHVH232', 0],
   ['軄', '3VVHH33VH23HV2HHV32', 0],
@@ -4102,6 +4111,7 @@ var kanji = [
   ['凹', '2HVH2V', 0],
   ['凹', 'V2VVH', 0],
   ['凹', '2VHV2H', 0],
+  ['凹', 'V2HVVH', 0],
   ['兕', 'V2HV2H32', 1],
   ['兕', '2VV232', 0],
   ['兕', 'V2V2H32', 0],
@@ -6311,7 +6321,10 @@ var kanji = [
   ['農', 'VVV2HHHVHH232', 0],
   ['罵', 'VHVVHHVHHVH3222', 0],
   ['拜', '3HHVHHHHV', 0],
+  ['拜', '3HHVHVHHH', 0],
   ['杯', 'HV3HH3HV', 0],
+  ['杯', 'HV3HH3VH', 0],
+  ['杯', 'HV32H3V2', 0],
   ['肺', 'VVHHHV2V', 1],
   ['俳', '3VHHHVVHHH', 1],
   ['排', 'HV3HH3VVHHH', 1],
@@ -6361,7 +6374,8 @@ var kanji = [
   ['披', 'HV3HVVV2', 1],
   ['卑', '', 0],
   ['秘', '', 0],
-  ['祕', '', 0],
+  ['祕', 'HHV3232223', 0],
+  ['祕', 'HHV32232V2', 0],
   ['被', '', 0],
   ['悲', '', 0],
   ['扉', '', 0],
@@ -6370,7 +6384,7 @@ var kanji = [
   ['埼', 'HV3H3HHV2HV', 0],
   ['備', '', 0],
   ['微', '', 0],
-  ['肘', '', 0],
+  ['肘', 'VVHHHV2', 0],
   ['泌', '', 0],
   ['姫', 'V3HHVV2HVH', 1],
   ['俵', '3VHVHH3232', 0],
@@ -6394,7 +6408,7 @@ var kanji = [
   ['腐', '', 0],
   ['敷', '', 0],
   ['侮', '', 0],
-  ['幅', '', 0],
+  ['幅', 'V2VHV2HV2VHH', 0],
   ['復', '', 0],
   ['福', 'HHV32V2HV2VHH', 0],
   ['福', 'HHV32V2HV2VHH', 0],
@@ -6671,7 +6685,9 @@ var kanji = [
   ['條', '', 0],
   ['狀', 'VHVHVH2VH', 0],
   ['乘', '', 0],
-  ['淨', '', 0],
+  ['淨', '22333222HHV', 0],
+  ['淨', '22VH3222HHV', 0],
+  ['淨', '22332222HHV', 0],
   ['剩', '', 0],
   ['疊', 'V2VHHV2VHHV2VHHVHV2HHH', 0],
   ['繩', 'VV2V32V2HH32H2HHVV', 3],
@@ -7124,7 +7140,9 @@ var kanji = [
   ['斎', 'VH32VHHV32V', 0],
   ['齋', 'VH2V23V3V2VHHV32V', 0],
   ['劑', 'VH2V23V3V2VHHVVV', 0],
-  ['', '', 0],
+  ['碎', 'H3V2HVH3232VH', 0],
+  ['碎', 'H3V2HVH3232HV', 0],
+  ['碎', 'H3V2HHV3232HV', 0],
   ['', '', 0],
   ['', '', 0],
   ['', '', 0],
@@ -7138,7 +7156,7 @@ var kanji = [
  * @global
  * @type {string}
  */
-var testk = '';
+var testk = ''; // @todo: Rename this variable (it's the same thing as angles).
 
 /**
  * @global
@@ -7909,10 +7927,28 @@ function findxy(res, e) {
         if ((typeof anglesArray[3] !== 'undefined')) {
           if ((kanji[i][1].length == (anglesArray.length - 1)) && (kanji[i][1].startsWith(anglesArray[3]) == true)) {
             if (last_kanji !== kanji[i][0]) {
-                slength.innerHTML = slength.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
-                slength_count += 1;
-				last_kanji = kanji[i][0];
+              slength.innerHTML = slength.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
+              slength_count += 1;
+              last_kanji = kanji[i][0];
             }
+          }
+        }
+      }
+    }
+	// If too many
+    if ((slength_count) > 16 && (typeof anglesArray[4] !== 'undefined')) {
+      slength.innerHTML = " ";
+      last_kanji = '';
+      slength_count = 0;
+      for (i = 0; i < kanji.length; i++) {
+        if (slength_count > 16) {
+          break;
+        }
+        if ((kanji[i][1].length == (anglesArray.length - 1)) && (kanji[i][1].startsWith(anglesArray[4]) == true)) {
+          if (last_kanji !== kanji[i][0]) {
+            slength.innerHTML = slength.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
+            slength_count += 1;
+            last_kanji = kanji[i][0];
           }
         }
       }
