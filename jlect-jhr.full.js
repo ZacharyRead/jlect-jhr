@@ -4932,6 +4932,7 @@ var kanji = [
   ['搯', 'HV3H3223H2HH', 0],
   ['搯', 'HVHH3223H2HH', 0],
   ['搯', 'HVH33223H2HH', 0],
+  ['搯', 'HV3H2223H2HH', 0],
   ['迪', 'VV2HH2VH', 3],
   ['洟', '223HHH2V2', 2],
   ['洟', '22VHHH2V2', 2],
@@ -7420,8 +7421,16 @@ function undo() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(oImg, 0, 0);
     };
-    oImg.src = restorePoints[saver_count - 1];
+
+    // Set back the save counter.
+	var saverHTMLElement = document.getElementById('jhr-saver');
     saver_count -= 1;
+    if (isValidElement(saverHTMLElement)) {
+      saverHTMLElement.innerHTML = saver_count.toString();
+    }
+
+    // Restore the canvas to the previous save point.
+    oImg.src = restorePoints[saver_count];
     restorePoints.pop();
 
     if (anglesArray.length > 0) {
@@ -7431,58 +7440,59 @@ function undo() {
       if (isValidElement(anglesHTMLElement)) {
         anglesHTMLElement.innerHTML = last_element;
       }
+    }
 
-      if (guessArray.length > 0) {
-        guessArray.pop();
-        var guessHTMLElement = document.getElementById('jhr-guess');
-        last_element = guessArray[guessArray.length - 1];
-        if (isValidElement(guessHTMLElement)) {
-          guessHTMLElement.innerHTML = last_element;
-        }
+    if (guessArray.length > 0) {
+      guessArray.pop();
+      var guessHTMLElement = document.getElementById('jhr-guess');
+      last_element = guessArray[guessArray.length - 1];
+      if (isValidElement(guessHTMLElement)) {
+        guessHTMLElement.innerHTML = last_element;
       }
+    }
 
-      if (fuzzyArray.length > 0) {
-        fuzzyArray.pop();
-        var fuzzyHTMLElement = document.getElementById('jhr-fuzzy');
-        last_element = fuzzyArray[fuzzyArray.length - 1];
-        if (isValidElement(fuzzyHTMLElement)) {
-          fuzzyHTMLElement.innerHTML = last_element;
-        }
+    if (fuzzyArray.length > 0) {
+      fuzzyArray.pop();
+      var fuzzyHTMLElement = document.getElementById('jhr-fuzzy');
+      last_element = fuzzyArray[fuzzyArray.length - 1];
+      if (isValidElement(fuzzyHTMLElement)) {
+        fuzzyHTMLElement.innerHTML = last_element;
       }
+    }
 
-      if (similarityArray.length > 0) {
-        similarityArray.pop();
-        var similarityHTMLElement = document.getElementById('jhr-similarity');
-        last_element = similarityArray[similarityArray.length - 1];
-        if (isValidElement(similarityHTMLElement)) {
-          similarityHTMLElement.innerHTML = last_element;
-        }
+    if (similarityArray.length > 0) {
+      similarityArray.pop();
+      var similarityHTMLElement = document.getElementById('jhr-similarity');
+      last_element = similarityArray[similarityArray.length - 1];
+      if (isValidElement(similarityHTMLElement)) {
+        similarityHTMLElement.innerHTML = last_element;
       }
+    }
 
-      if (slengthArray.length > 0) {
-        slengthArray.pop();
-        var slengthHTMLElement = document.getElementById('jhr-slength');
-        last_element = slengthArray[slengthArray.length - 1];
-        if (isValidElement(slengthHTMLElement)) {
-          slengthHTMLElement.innerHTML = last_element;
-        }
+    if (slengthArray.length > 0) {
+      slengthArray.pop();
+      var slengthHTMLElement = document.getElementById('jhr-slength');
+      last_element = slengthArray[slengthArray.length - 1];
+      if (isValidElement(slengthHTMLElement)) {
+        slengthHTMLElement.innerHTML = last_element;
       }
+    }
 
-      if (dir_count) {
-        dir_count -= 1;
-        var directionHTMLElement = document.getElementById('jhr-direction');
-        if (isValidElement(directionHTMLElement)) {
-          directionHTMLElement.innerHTML = 'Direction: ' + dir_count;
-        }
+    // @todo: Fix this, as it subtracts regardless of actual previous status.
+    if (dir_count) {
+      dir_count -= 1;
+      var directionHTMLElement = document.getElementById('jhr-direction');
+      if (isValidElement(directionHTMLElement)) {
+        directionHTMLElement.innerHTML = dir_count;
       }
+    }
 
-      if (line_num) {
-        line_num -= 1;
-      }
+    if (line_num) {
+      line_num -= 1;
+    }
 
-      if (testk) {
-        testk = testk.substring(0, testk.length - 4);
-      }
+    if (testk) {
+      testk = testk.substring(0, testk.length - 4);
     }
   }
 }
