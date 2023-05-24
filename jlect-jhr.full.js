@@ -7872,7 +7872,7 @@ function findxy(res, e) {
        * Retrieves the pixel data of an area on the current canvas.
        * @type {ImageData}
        */
-      var imgData = ctx.getImageData(currX, currY, 1, 1);
+      var imgData = ctx.getImageData(currX, currY + 10, 1, 1);
 
       /**
        * Retrieves the red property of the RGBA value of imgData.
