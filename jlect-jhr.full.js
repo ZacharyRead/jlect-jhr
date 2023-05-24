@@ -7375,9 +7375,7 @@ function draw() {
   ctx.moveTo(prevX, prevY);
   ctx.lineTo(currX, currY);
   ctx.strokeStyle = 'black';
-  ctx.lineWidth = 3;
-  ctx.lineCap = 'round';
-  ctx.lineJoin = 'round';
+  ctx.lineWidth = 4;
 
   ctx.shadowColor = 'black';
   ctx.shadowOffsetX = 0;
