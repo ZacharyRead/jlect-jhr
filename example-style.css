@@ -44,3 +44,7 @@ h3:first-of-type {
 .kmatch {
     margin: 0 0 1px 1px;
 }
+
+#jhr-undo {
+    margin-left: 15px;
+}

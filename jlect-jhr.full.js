@@ -1037,6 +1037,7 @@ var kanji = [
   ['油', '2H3VV2HH', 0],
   ['油', '223VV2HH', 0],
   ['油', '223V2VHH', 0],
+  ['油', '22VVV2HH', 1],
   ['此', 'HVVH32', 0],
   ['此', 'HVV332', 0],
   ['余', '32HHV32', 0],
@@ -2580,6 +2581,7 @@ var kanji = [
   ['渋', '223HVVH2332', 0],
   ['動', '3HV2HHHVH23', 1],
   ['動', 'HHV2HHHVH23', 1],
+  ['動', '3HV2HHHVH2V', 1],
   ['棒', 'HVV2HHHV2HHV', 0],
   ['鬼', '3V2VHH32V2', 1],
   ['鬼', 'VV2VHH32V2', 1],
@@ -6213,10 +6215,16 @@ var kanji = [
   ['謠', 'HHHHV2H3V223HVHHV', 1],
   ['謠', '2HHHV2H3V2H3HHVHV', 1],
   ['謠', 'HHHHV2H3V2H3HHVHV', 1],
-  ['臆', '', 0],
-  ['養', '', 0],
-  ['窯', '', 0],
-  ['瘍', '', 0],
+  ['臆', 'VVHHVH23HV2HH3222', 1],
+  ['養', '23HHVH32V2HHV32', 0],
+  ['養', '23HVHH3222HHV32', 0],
+  ['養', '23HVHH32V2HHV32', 0],
+  ['窯', 'VVH3223HHVH3222', 0],
+  ['窯', 'VVH3223HVHH3222', 0],
+  ['瘍', 'VHV23V2HHH3233', 2],
+  ['瘍', 'VHV2HV2HHH3233', 2],
+  ['瘍', 'VHVV3V2HHH3233', 2],
+  ['瘍', 'VHVVHV2HHH3233', 2],
   ['様', 'HV3223HHVHV2332', 0],
   ['様', 'HV3H23HHHV2332', 0],
   ['樣', 'HV3H23HHVH2V2332', 0],
@@ -6292,6 +6300,7 @@ var kanji = [
   ['虹', 'VV2HHVHVH', 0],
   ['虹', 'V2HVHVHVH', 0],
   ['虹', 'V2HV32HVH', 0],
+  ['虹', 'V2HVH2HVH', 0],
   ['熱', 'HVH32HVH2V23222', 0],
   ['捻', 'HV332HV3222', 0],
   ['粘', '23HV3HVHV2H', 0],
@@ -6305,11 +6314,13 @@ var kanji = [
   ['肺', 'VVHHHV2V', 1],
   ['俳', '3VHHHVVHHH', 1],
   ['排', 'HV3HH3VVHHH', 1],
-  ['賣', '', 0],
-  ['梅', '', 0],
-  ['梅', '', 0],
-  ['陪', '', 0],
-  ['媒', '', 0],
+  ['賣', 'HVHVHVVHV2HHH32', 0],
+  ['梅', 'HV3H3H22VH', 2],
+  ['梅', 'HV323H2222H', 0],
+  ['梅', 'HV32VHVV22H', 1],
+  ['陪', 'VVVVH23HV2H', 2],
+  ['陪', 'VVVH23HV2H', 1],
+  ['媒', 'V3HHVVHHHV32', 0],
   ['泊', '2233V2HH', 0],
   ['辵', '333VH3H', 0],
   ['剝', '22HV2332VV', 2],
@@ -6324,20 +6335,29 @@ var kanji = [
   ['汎', '223V22', 1],
   ['判', '23HHVVV', 0],
   ['板', 'HV3HH3V2', 1],
-  ['班', '', 0],
+  ['班', 'HHVHVVHHVH', 0],
+  ['班', 'HHV3VVHHV3', 0],
+  ['班', 'HHV3VVHHVH', 0],
+  ['班', 'HVHHVVHVHH', 0],
+  ['班', 'HVH3VVHHV3', 0],
+  ['班', 'HVH3VVHHVH', 0],
   ['畔', 'V2VHHH3HHV', 0],
-  ['販', '', 0],
+  ['販', 'V2HHH32HVV2', 1],
   ['搬', '', 0],
   ['煩', '', 0],
   ['頒', '', 0],
   ['範', '', 0],
   ['策', '', 0],
+  ['晩', 'V2HH3222VH32', 0],
+  ['晩', 'V2HH3HVHVH32', 0],
   ['繁', '', 0],
-  ['晩', '', 0],
-  ['晚', '', 0],
+  ['晚', 'V2HH3HVHVH2', 2],
+  ['晚', 'V2HHV2VHHV2', 2],
+  ['晚', 'V2HHV2VHH32', 2],
   ['蛮', '', 0],
-  ['蠻', '', 0],
-  ['披', '', 0],
+  ['蠻', 'VV2V322HHHV2HVV2V32V2HVH2', 4],
+  ['蠻', 'VV2V32HHHHV2HVV2V32V2HVH2', 4],
+  ['披', 'HV3HVVV2', 1],
   ['卑', '', 0],
   ['秘', '', 0],
   ['祕', '', 0],
@@ -6351,13 +6371,17 @@ var kanji = [
   ['微', '', 0],
   ['肘', '', 0],
   ['泌', '', 0],
-  ['姫', '', 0],
-  ['俵', '', 0],
-  ['票', '', 0],
-  ['漂', '', 0],
-  ['病', '', 0],
+  ['姫', 'V3HHVV2HVH', 1],
+  ['俵', '3VHVHH3232', 0],
+  ['票', 'HVVVHHHHV32', 0],
+  ['票', 'HV2VVHHHV32', 0],
+  ['漂', '223HVVVHHHHV32', 0],
+  ['漂', '223HV2VVHHHV32', 0],
+  ['病', 'VHV23HV2V2', 1],
+  ['病', 'VH323HV2V2', 1],
+  ['病', 'VH3VHHV2V2', 1],
   ['濱', '', 0],
-  ['貧', '', 0],
+  ['貧', '3223V2HHH32', 0],
   ['賓', '', 0],
   ['頻', '', 0],
   ['頻', '', 0],
@@ -6805,17 +6829,21 @@ var kanji = [
   ['鎭', '3HHHVH3H32V2HHH232', 2],
   ['塚', '', 0],
   ['遞', '', 0],
-  ['柵', '', 0],
+  ['柵', 'HV32V2VVH', 0],
+  ['柵', 'HV32V2HVV', 0],
   ['鐵', '', 0],
   ['裁', '', 0],
-  ['債', '', 0],
-  ['催', '', 0],
-  ['塞', '', 0],
-  ['點', '', 0],
+  ['債', '3VHVHHV2HHH32', 0],
+  ['債', '3VHHVHV2HHH32', 0],
+  ['催', '3VVHV3V3HVHHH', 1],
+  ['塞', 'VVHHVVHH32HVH', 0],
+  ['點', 'V223HVHH3222VHV2H', 0],
+  ['點', 'V223HHVHV222HVV2H', 0],
   ['轉', '', 0],
   ['傳', '', 0],
-  ['都', '', 0],
-  ['燈', '', 0],
+  ['都', 'HVH32V2HHVVV', 2],
+  ['都', 'HVH32V2HHVV', 2],
+  ['燈', '33V2V2323HVHH23H', 1],
   ['當', '2V3VHV2HV2VHH', 0],
   ['黨', '2V3VHV2HVH23HHVH3222', 1],
   ['鉛', '3HHHVH3H32V2H', 0],
@@ -6975,93 +7003,126 @@ var kanji = [
   ['剌', 'HVHHV32VV', 0],
   ['剌', 'HVV2H32VV', 0],
   ['奇', 'H32HV2HV', 0],
-  ['峽', '', 0],
-  ['挾', '', 0],
-  ['狹', '', 0],
-  ['恐', '', 0],
-  ['脅', '', 0],
-  ['鄕', '', 0],
-  ['境', '', 0],
-  ['矯', '', 0],
-  ['暁', '', 0],
-  ['極', '', 0],
-  ['琴', '', 0],
-  ['窟', '', 0],
-  ['勲', '', 0],
+  ['峽', 'V2VH3H32V2', 1],
+  ['挾', 'HV3H3232V2', 1],
+  ['狹', '3V3H3232V2', 2],
+  ['恐', 'HVHV223H22', 1],
+  ['脅', '232V23V2HH', 0],
+  ['鄕', 'VVV32HHVHH2VV', 4],
+  ['鄕', 'VVV32HHVHHVV', 6],
+  ['境', 'HVHVH23HV2HH32', 1],
+  ['矯', '3HHV2HH32V2HV2VHH', 0],
+  ['暁', 'VVHHHVHVVH32', 0],
+  ['極', 'HV32HV2HVV2H', 3],
+  ['極', 'HV32HVV2HV2H', 3],
+  ['琴', 'HHVHHHVH32HV', 1],
+  ['窟', 'VVH32HHVHVHVV', 1],
+  ['勲', '3HV2HHHVH233222', 0],
+  ['勲', 'HHV2HHHVH233222', 0],
+  ['勲', '3HV2HHHVH2V3222', 0],
   ['薰', '', 0],
-  ['径', '', 0],
-  ['茎', '', 0],
-  ['型', '', 0],
-  ['契', '', 0],
-  ['恵', '', 0],
-  ['啓', '', 0],
-  ['渓', '', 0],
-  ['経', '', 0],
-  ['蛍', '', 0],
-  ['携', '', 0],
-  ['継', '', 0],
-  ['詣', '', 0],
-  ['慶', '', 0],
-  ['憬', '', 0],
-  ['稽', '', 0],
-  ['隙', '', 0],
-  ['劇', '', 0],
-  ['桁', '', 0],
-  ['傑', '', 0],
-  ['潔', '', 0],
-  ['券', '', 0],
-  ['建', '', 0],
-  ['嫌', '', 0],
-  ['権', '', 0],
-  ['限', '', 0],
-  ['舷', '', 0],
-  ['厳', '', 0],
-  ['股', '', 0],
-  ['孤', '', 0],
-  ['弧', '', 0],
-  ['枯', '', 0],
-  ['個', '', 0],
-  ['庫', '', 0],
-  ['錮', '', 0],
-  ['碁', '', 0],
-  ['勾', '', 0],
-  ['效', '', 0],
-  ['幸', '', 0],
-  ['拘', '', 0],
-  ['肯', '', 0],
-  ['侯', '', 0],
-  ['厚', '', 0],
-  ['恒', '', 0],
-  ['洪', '', 0],
-  ['郊', '', 0],
-  ['貢', '', 0],
-  ['控', '', 0],
-  ['梗', '', 0],
-  ['黄', '', 0],
-  ['喉', '', 0],
-  ['慌', '', 0],
-  ['絞', '', 0],
-  ['項', '', 0],
-  ['溝', '', 0],
-  ['鉱', '', 0],
-  ['鑛', '', 0],
-  ['穀', '', 0],
-  ['駒', '', 0],
-  ['昆', '', 0],
-  ['婚', '', 0],
-  ['痕', '', 0],
-  ['紺', '', 0],
-  ['沙', '', 0],
-  ['砂', '', 0],
-  ['唆', '', 0],
-  ['挫', '', 0],
-  ['砕', '', 0],
-  ['栽', '', 0],
-  ['彩', '', 0],
-  ['濟', '', 0],
-  ['斎', '', 0],
-  ['齋', '', 0],
-  ['劑', '', 0],
+  ['径', '33VV2HVH', 1],
+  ['茎', 'HVV32HVH', 1],
+  ['型', 'HHVVVVHVH', 0],
+  ['契', 'HHVH2VH32', 0],
+  ['契', 'HVHH2VH32', 0],
+  ['契', 'HVH32VH32', 0],
+  ['恵', 'HVV2HH3222', 1],
+  ['啓', 'H2HV3H32V2H', 0],
+  ['渓', '22VH223HH32', 0],
+  ['経', 'VV2V32V2HVH', 3],
+  ['蛍', '223VHV2HVH2', 0],
+  ['携', 'HV33V3HVHHH23', 0],
+  ['携', 'HV33V3HVHHH32', 0],
+  ['継', 'VV2V3223HV322', 2],
+  ['継', 'VV2V32V23HV32H', 2],
+  ['詣', '2HHHV2H32V2HH', 0],
+  ['詣', 'HHHHV2H32V2HH', 0],
+  ['慶', 'VHVVVHHHV2223V2', 3],
+  ['慶', 'VHVVVHHH32223V2', 2],
+  ['憬', '32VV2HHVHVHHV32', 0],
+  ['憬', 'V32V2HHVHVHHV32', 0],
+  ['憬', 'VVVV2HHVHVHHV32', 0],
+  ['稽', '3HV32H232H2V2HH', 0],
+  ['稽', '3HV32HV22H2V2HH', 1],
+  ['隙', '32VV2HHVHV2HV32', 0],
+  ['隙', 'VVVV2HHVHV2HV32', 0],
+  ['劇', 'VHHVH2H3V33VVV', 4],
+  ['劇', 'HVHVH2H3V33VVV', 4],
+  ['劇', 'VHHVHVH3V3332VV', 4],
+  ['劇', 'HVHVHVH3V3332VV', 4],
+  ['桁', 'HV3233VHHV', 0],
+  ['傑', '3V3VHHVHVHV32', 1],
+  ['潔', '223HVHH2VVV2V32', 2],
+  ['券', 'H3HHV223', 1],
+  ['券', '23HHV223', 1],
+  ['建', '2HHHHVVVH', 2],
+  ['建', '2HHHHVVH', 3],
+  ['嫌', 'VVH23H2HHVV32', 1],
+  ['権', 'HV323HH3V3HVHHH', 0],
+  ['限', 'VVV2HHV32', 2],
+  ['限', 'VV2HHV32', 3],
+  ['舷', '3VV22HVHVV2', 3],
+  ['舷', 'VVV22HVHVV2', 3],
+  ['舷', '3VV2VHVHVV2', 2],
+  ['舷', 'VVV2VHVHVV2', 2],
+  ['厳', '223HVHVHVHH3VVH32', 0],
+  ['股', 'V2HHV2V2', 2],
+  ['孤', '2VHHVV32V', 1],
+  ['弧', '2HVHVV32V', 1],
+  ['弧', '2HVHVVH22', 1],
+  ['枯', 'HV32HVV2H', 0],
+  ['個', '3VV2HVV2HH', 0],
+  ['庫', 'VHVHV2HHHV', 0],
+  ['錮', '32HHV23HV2HVV2HH', 0],
+  ['碁', 'HVVHHH32H3V2H', 0],
+  ['勾', '32V2', 1],
+  ['效', 'VH32323H32', 0],
+  ['效', 'VH32323H32', 0],
+  ['幸', 'HVH23HHV', 0],
+  ['拘', 'HV332V2H', 0],
+  ['肯', 'VHVHV2HH', 0],
+  ['侯', '3V2H3HHV2', 0],
+  ['厚', 'HVV2HH2VH', 2],
+  ['恒', '32VHV2HHH', 0],
+  ['恒', 'VVVHV2HHH', 0],
+  ['洪', '223HVVH32', 0],
+  ['郊', 'VH32322VV', 2],
+  ['郊', 'VH3232VV', 2],
+  ['貢', 'HVHV2HHH32', 0],
+  ['控', 'HV3VVHV2HVH', 1],
+  ['梗', 'HV32HV2HHV2', 0],
+  ['黄', 'HVVHV2HHV32', 0],
+  ['黄', 'HVVHV2VHH32', 1],
+  ['喉', 'V2H3V2H3HH32', 0],
+  ['慌', '32VHVVVH23VV', 0],
+  ['慌', 'VVVHVVVH23VV', 0],
+  ['絞', 'VV2V32VH2332', 2],
+  ['項', 'HVHH3V2HHH32', 1],
+  ['溝', '223HHHVVV2VHH', 0],
+  ['溝', '223HVVHHV2VHH', 0],
+  ['鉱', '32HHV23HVHVV2', 1],
+  ['鑛', '32HHVH3HVHVHVVHHV22HH32', 0],
+  ['穀', 'HVHVH3HV32V2V2', 1],
+  ['駒', 'HVVHHHV22232V2H', 0],
+  ['昆', 'V2HHH232', 0],
+  ['昆', 'V2HHH2H2', 0],
+  ['昆', 'V2HH32H2', 0],
+  ['昆', 'V2HH3232', 0],
+  ['婚', 'V3H3VH2V2HH', 1],
+  ['痕', 'VHV232HHV32', 1],
+  ['紺', 'VV2V32HVVHH', 2],
+  ['沙', '223V323', 0],
+  ['砂', 'H3V2HV323', 0],
+  ['唆', 'V2H22323V2', 0],
+  ['挫', 'HV33232VHH', 0],
+  ['砕', 'H3V2H2VHV', 1],
+  ['栽', 'HVHHV32232', 0],
+  ['彩', '3223HV32333', 0],
+  ['濟', '22VVH2V23V322VHHV', 0],
+  ['斎', 'VH32VHHV32V', 0],
+  ['齋', 'VH2V23V3V2VHHV32V', 0],
+  ['劑', 'VH2V23V3V2VHHVVV', 0],
   ['', '', 0],
   ['', '', 0],
   ['', '', 0],
@@ -7366,14 +7427,14 @@ function undo() {
     if (anglesArray.length > 0) {
       anglesArray.pop();
       var last_element = anglesArray[anglesArray.length - 1];
-      var anglesHTMLElement = document.getElementById('angles');
+      var anglesHTMLElement = document.getElementById('jhr-angles');
       if (isValidElement(anglesHTMLElement)) {
         anglesHTMLElement.innerHTML = last_element;
       }
 
       if (guessArray.length > 0) {
         guessArray.pop();
-        var guessHTMLElement = document.getElementById('guess');
+        var guessHTMLElement = document.getElementById('jhr-guess');
         last_element = guessArray[guessArray.length - 1];
         if (isValidElement(guessHTMLElement)) {
           guessHTMLElement.innerHTML = last_element;
@@ -7382,7 +7443,7 @@ function undo() {
 
       if (fuzzyArray.length > 0) {
         fuzzyArray.pop();
-        var fuzzyHTMLElement = document.getElementById('fuzzy');
+        var fuzzyHTMLElement = document.getElementById('jhr-fuzzy');
         last_element = fuzzyArray[fuzzyArray.length - 1];
         if (isValidElement(fuzzyHTMLElement)) {
           fuzzyHTMLElement.innerHTML = last_element;
@@ -7391,7 +7452,7 @@ function undo() {
 
       if (similarityArray.length > 0) {
         similarityArray.pop();
-        var similarityHTMLElement = document.getElementById('similarity');
+        var similarityHTMLElement = document.getElementById('jhr-similarity');
         last_element = similarityArray[similarityArray.length - 1];
         if (isValidElement(similarityHTMLElement)) {
           similarityHTMLElement.innerHTML = last_element;
@@ -7409,7 +7470,7 @@ function undo() {
 
       if (dir_count) {
         dir_count -= 1;
-        var directionHTMLElement = document.getElementById('direction');
+        var directionHTMLElement = document.getElementById('jhr-direction');
         if (isValidElement(directionHTMLElement)) {
           directionHTMLElement.innerHTML = 'Direction: ' + dir_count;
         }
@@ -7441,7 +7502,7 @@ function erase() {
    * The div element containing the list of near matches.
    * @type {HTMLElement}
    */
-  var guessHTMLElement = /** @type {HTMLElement} */ document.getElementById('guess');
+  var guessHTMLElement = /** @type {HTMLElement} */ document.getElementById('jhr-guess');
   if (isValidElement(guessHTMLElement)) {
     guessHTMLElement.innerHTML = '';
   }
@@ -7452,7 +7513,7 @@ function erase() {
    * The div element containing the list of fuzze matches.
    * @type {HTMLElement}
    */
-  var fuzzyHTMLElement = document.getElementById('fuzzy');
+  var fuzzyHTMLElement = document.getElementById('jhr-fuzzy');
   if (isValidElement(fuzzyHTMLElement)) {
     fuzzyHTMLElement.innerHTML = '';
   }
@@ -7463,7 +7524,7 @@ function erase() {
    * The div element containing the list of similarity matches.
    * @type {HTMLElement}
    */
-  var similarityHTMLElement = document.getElementById('similarity');
+  var similarityHTMLElement = document.getElementById('jhr-similarity');
   if (isValidElement(similarityHTMLElement)) {
     similarityHTMLElement.innerHTML = '';
   }
@@ -7485,7 +7546,7 @@ function erase() {
    * The div element displaying the stroke angles.
    * @type {HTMLElement}
    */
-  var angleHTMLElement = document.getElementById('angles');
+  var angleHTMLElement = document.getElementById('jhr-angles');
   if (isValidElement(angleHTMLElement)) {
     angleHTMLElement.innerHTML = '';
   }
@@ -7496,17 +7557,18 @@ function erase() {
    * The div element displaying the number of direction changes.
    * @type {HTMLElement}
    */
-  var directionHTMLElement = document.getElementById('direction');
+  var directionHTMLElement = document.getElementById('jhr-direction');
   directionHTMLElement.innerHTML = '';
   direction = 0;
   test_dir = 0;
   dir_count = 0;
 
   /**
-   * The div element displaying the number of stroke overlaps (buggy).
+   * The div element displaying the number of stroke overlaps
+   * (buggy / not reliable on mobile).
    * @type {HTMLElement}
    */
-  var overlapDiv = document.getElementById('overlap');
+  var overlapDiv = document.getElementById('jhr-overlap');
   overlapDiv.innerHTML = '';
   overlap = 0;
 
@@ -7514,7 +7576,7 @@ function erase() {
    * The div element displaying the number of save points.
    * @type {HTMLElement}
    */
-  var saverDiv = document.getElementById('saver');
+  var saverDiv = document.getElementById('jhr-saver');
   saverDiv.innerHTML = '';
   restorePoints = [];
   saveRestorePoint();
@@ -7633,11 +7695,11 @@ function findxy(res, e) {
       rounded_degrees_str = 'V';
     }
 
-    var theDiv = document.getElementById('angles');
+    var theDiv = document.getElementById('jhr-angles');
     theDiv.innerHTML = theDiv.innerHTML + rounded_degrees_str;
     anglesArray.push(theDiv.innerHTML);
 
-    var guess = document.getElementById('guess');
+    var guess = document.getElementById('jhr-guess');
     var guess_kanji = 0;
 
     var last_kanji = '';
@@ -7682,7 +7744,7 @@ function findxy(res, e) {
     guessArray.push(guess.innerHTML);
 
     //count fuzzy
-    var fuzzy = document.getElementById('fuzzy');
+    var fuzzy = document.getElementById('jhr-fuzzy');
     fuzzy.innerHTML = " ";
 
     /**
@@ -7799,7 +7861,7 @@ function findxy(res, e) {
     fuzzyArray.push(fuzzy.innerHTML);
 
     //count similarity
-    var similarity = document.getElementById('similarity');
+    var similarity = document.getElementById('jhr-similarity');
     similarity.innerHTML = " ";
     last_kanji = '';
 
@@ -7854,7 +7916,7 @@ function findxy(res, e) {
      * The number of save points.
      * @type {HTMLElement}
      */
-    var saver = document.getElementById("saver");
+    var saver = document.getElementById('jhr-saver');
     saver_count += 1;
     saver.innerHTML = saver_count.toString();
     saveRestorePoint();
@@ -7895,7 +7957,7 @@ function findxy(res, e) {
       var red = imgData.data[0];
       if (red === 0) {
         overlap += 1;
-        var ol_div = document.getElementById('overlap');
+        var ol_div = document.getElementById('jhr-overlap');
         ol_div.innerHTML = overlap;
       }
       draw();
@@ -7944,7 +8006,7 @@ function directionalChangeTimer() {
      * Update the number of stroke direction changes.
      * @type {HTMLElement}
      */
-    var directionHTMLElement = document.getElementById('direction');
+    var directionHTMLElement = document.getElementById('jhr-direction');
     if (isValidElement(directionHTMLElement)) {
       directionHTMLElement.innerHTML = dir_count;
     }
