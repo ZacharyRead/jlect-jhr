@@ -7880,7 +7880,7 @@ function findxy(res, e) {
        * @type {number}
        */
       var red = imgData.data[0];
-      if (red) {
+      if (red === 0) {
         overlap += 1;
         var ol_div = document.getElementById('overlap');
         ol_div.innerHTML = overlap;
