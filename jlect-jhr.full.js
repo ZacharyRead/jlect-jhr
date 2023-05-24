@@ -3,6 +3,11 @@
  * @author Zachary Read
  *
  * (c) Zachary Read | JLect.com
+ *
+ * License:
+ * Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+ * https://creativecommons.org/licenses/by-sa/3.0/
+ *
  */
 
 /**
@@ -10,6 +15,11 @@
  */
 
 /**
+ * Array containing Kanji data:
+ *  - kanji character,
+ *  - stroke angles,
+ *  - direction shifts.
+ *
  * @global
  * @type {Array.<Array.<string,string,number>>}
  */
@@ -236,6 +246,7 @@ var kanji = [
   ['男', 'V2VHH23', 1],
   ['男', 'V2HVH23', 1],
   ['男', 'V2VH323', 1],
+  ['男', 'V2VHH2V', 1],
   ['力', '23', 1],
   ['力', '2V', 1],
   ['生', '3HVHH', 0],
@@ -251,9 +262,11 @@ var kanji = [
   ['爪', 'H3VV', 0],
   ['爪', '3V2', 0],
   ['爪', '3VV', 0],
+  ['爪', '3VV2', 0],
   ['呂', 'V2H3V2H', 0],
   ['呂', 'V2HVV2H', 0],
   ['呂', 'VHHVV2H', 0],
+  ['呂', 'V2H3VHH', 0],
   ['枕', 'HV32VHV2', 2],
   ['宛', 'VVH3V22H2', 2],
   ['宛', 'VVH3V222', 3],
