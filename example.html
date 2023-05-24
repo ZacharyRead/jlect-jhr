@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="example-style.css">
 </head>
 <body>
+  <div>
     <h1>JLect Japanese Handwriting Recognition Tool (JLect JHR)</h1>
     <p>This page provides an example of how the JLect JHR library can be integrated onto your site.</p>
     <h2>Handwritten Kanji Search</h2>
@@ -19,9 +20,11 @@
         </div>
         <div id="handwriting-results">
             <h3>Near match:</h3>
+			<!-- Results based on all characters starting with
+			the same strokes as drawn on the canvas. -->
             <div id="jhr-guess"></div>
 
-            <h3>Start & length match:</h3>
+            <h3>Partial match:</h3>
 			<!-- Results based on the first three characters
 			and the number of drawn strokes on the canvas. -->
             <div id="jhr-slength"></div>
@@ -41,6 +44,14 @@
         <div>Overlap: <span id="jhr-overlap"></span></div>
         <div>Saver: <span id="jhr-saver"></span></div>
     </div>
-    <script charset="UTF-8" src="jlect-jhr.full.js?20230524-1323"></script>
+
+    <div>
+        <h2>Code repository</h2>
+        <p><a href="https://github.com/ZacharyRead/jlect-jhr">Check out the repository on Github!</a></p>
+    </div>
+
+  </div>
+
+  <script charset="UTF-8" src="jlect-jhr.full.js?20230524-1820"></script>
 </body>
 </html>

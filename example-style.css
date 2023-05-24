@@ -3,6 +3,12 @@ body {
     font-size: 100%;
     line-height: 1.8em;
 }
+body > div {
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1em;
+}
 #canvas-table {
     display: table;
     width: 80%;
