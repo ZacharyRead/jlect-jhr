@@ -11,16 +11,16 @@ Example:
 
 ![Example of Japanese Handwriting Recognition Tool](jhr-example.png?raw=true "Example of Japanese Handwriting Recognition Tool")
 
-## License
-
-The library and all associated files provided in the official repository are covered by the following Creative Commons license:
-* Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0): https://creativecommons.org/licenses/by-sa/3.0/
-
 ## Live demo
 
 For a live demo, please check out https://zacharyread.github.io/jlect-jhr/example.html
 
 For an example implementation, you can visit https://www.jlect.com and click on the "字 (draw)" button beside the search bar.
+
+## License
+
+The library and all associated files provided in the official repository are covered by the following Creative Commons license:
+* Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0): https://creativecommons.org/licenses/by-sa/3.0/
 
 ## Advantages and disadvantages
 
