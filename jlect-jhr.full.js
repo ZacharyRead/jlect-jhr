@@ -1081,6 +1081,10 @@ var kanji = [
   ['圭', 'HVHHVH', 0],
   ['秬', '3HV32VH2HH', 0],
   ['秬', '3HV32V2HH', 1],
+  ['秬', '3HV32HVHHH', 0],
+  ['秬', 'HHV32HVHHH', 0],
+  ['秬', '3HV3HVH2HH', 0],
+  ['秬', 'HHV3HVH2HH', 0],
   ['志', 'HVH3H22', 0],
   ['志', 'HVH3222', 0],
   ['志', 'HVH3HHH', 0],
@@ -2301,6 +2305,8 @@ var kanji = [
   ['積', '3HV32HVHHV2HHH32', 0],
   ['積', 'VHV32HVHHV2HHH32', 0],
   ['積', '2V32HVHHV2HHH32', 1],
+  ['積', '3HV3HHVHHV23H332', 0],
+  ['積', '3HV32HVHHV2HH32', 0],
   ['抉', 'HV3HVH32', 0],
   ['抉', 'HV3HVH2', 0],
   ['抉', 'HV32HV2', 0],
@@ -2355,6 +2361,7 @@ var kanji = [
   ['聲', 'HVHHVH3V2V2HVHH3V', 1],
   ['声', 'HVHHVH3', 0],
   ['声', 'HVHHHV3', 0],
+  ['声', 'HVHHVHV', 0],
   ['寒', 'VVHHVVHH3222', 0],
   ['寒', 'VVHHHH3222', 0],
   ['覂', 'HV2VVH32VH', 1],
@@ -7248,6 +7255,18 @@ var kanji = [
   ['', '', 0]
   // Check < 1500 https://en.wikipedia.org/wiki/List_of_j%C5%8Dy%C5%8D_kanji
 ];
+
+/**
+ * To count the number of unique characters in the above set, run the following
+ * in the Developer console (F12). Last checked, there were 2990+ unique
+ * characters, out of 7215+ total entries. 70 characters are still missing data.
+ *
+ * var kanji_col1 = kanji.map(function(value,index) { return value[0]; });
+ * var unique = [...new Set(kanji_col1)];
+ * console.log(unique);
+ *
+ */
+ 
 
 /**
  * @global
