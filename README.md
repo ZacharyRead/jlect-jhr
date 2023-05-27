@@ -3,6 +3,15 @@
 (c) Zachary Read | JLect.com  
 2013-2023
 
+## Table of contents
+
+- [JLect Japanese Handwriting Recognition Tool (JLect JHR)](#jlect-japanese-handwriting-recognition-tool-jlect-jhr)
+  * [What is it?](#what-is-it)
+  * [Live demo](#live-demo)
+  * [License](#license)
+  * [Advantages and disadvantages](#advantages-and-disadvantages)
+  * [Contributing](#contributing)
+
 ## What is it?
 
 JLect JHR is a JavaScript library that provides support for Japanese handwritten character recognition. Users can draw a character in a defined HTML canvas element and the library will output guesses based on stroke direction.
@@ -34,7 +43,7 @@ Pros:
 Cons:
 
 * The library is stroke-oriented and does not handle cursive character input.
-* The dataset is incomplete, so it may fail at recognizing a large number of characters.
+* The dataset is incomplete, so it may fail at recognizing a fair number of characters.
 * It only supports drawing one character at a time.
 
 ## Contributing
