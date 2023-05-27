@@ -7515,6 +7515,7 @@ var guessArray = [''];
 var fuzzyArray = [''];
 var similarityArray = [''];
 var slengthArray = [''];
+var wrongorderArray = [''];
 
 // Timer values
 var timeX = 0;
@@ -7618,8 +7619,17 @@ function undo() {
       }
     }
 
+    if (wrongorderArray.length > 0) {
+      wrongorderArray.pop();
+      var wrongorderHTMLElement = document.getElementById('jhr-wrongorder');
+      last_element = wrongorderArray[wrongorderArray.length - 1];
+      if (isValidElement(wrongorderHTMLElement)) {
+        wrongorderHTMLElement.innerHTML = last_element;
+      }
+    }
+
     // @todo: Fix this, as it subtracts regardless of actual previous status.
-	// @todo: Also do the same for the "overlap" data variable.
+    // @todo: Also do the same for the "overlap" data variable.
     if (dir_count) {
       dir_count -= 1;
       var directionHTMLElement = document.getElementById('jhr-direction');
@@ -7692,6 +7702,17 @@ function erase() {
   }
   slengthArray.length = 0;
   slengthArray = [''];
+
+  /**
+   * The div element containing the list of start-length matches.
+   * @type {HTMLElement}
+   */
+  var wrongorderHTMLElement = document.getElementById('jhr-wrongorder');
+  if (isValidElement(wrongorderHTMLElement)) {
+    wrongorderHTMLElement.innerHTML = '';
+  }
+  wrongorderArray.length = 0;
+  wrongorderArray = [''];
 
   /**
    * The div element displaying the stroke angles.
@@ -8057,7 +8078,7 @@ function findxy(res, e) {
         }
       }
     }
-	// If too many
+    // If too many
     if ((slength_count) > 16 && (typeof anglesArray[4] !== 'undefined')) {
       slength.innerHTML = " ";
       last_kanji = '';
@@ -8076,6 +8097,48 @@ function findxy(res, e) {
       }
     }
     slengthArray.push(slength.innerHTML);
+
+    // Wrong order match
+    var wrongorderHTMLElement	= document.getElementById('jhr-wrongorder');
+    wrongorderHTMLElement.innerHTML = " ";
+    last_kanji = '';
+    var wrongorder_count = 0;
+    var wo_lastitem = anglesArray.at(-1);
+    var wo_lastitem_count = {
+      'h' : wo_lastitem.count('H'),
+      'v' : wo_lastitem.count('V'),
+      'd2' : wo_lastitem.count('2'),
+      'd3' : wo_lastitem.count('3')
+    };
+
+    if (line_num > 1) {
+      for (i = 0; i < kanji.length; i++) {
+        if (wrongorder_count > 16) {
+          break;
+        }
+        
+        if (last_kanji !== kanji[i][0]) {
+          let wo_currentitem_count = {
+            'h' : kanji[i][1].count('H'),
+            'v' : kanji[i][1].count('V'),
+            'd2' : kanji[i][1].count('2'),
+            'd3' : kanji[i][1].count('3')
+          };
+
+          if (wo_lastitem_count.h == wo_currentitem_count.h &&
+              wo_lastitem_count.v == wo_currentitem_count.v &&
+              wo_lastitem_count.d2 == wo_currentitem_count.d2 &&
+              wo_lastitem_count.d3 == wo_currentitem_count.d3) {
+            wrongorderHTMLElement.innerHTML = wrongorderHTMLElement.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
+            wrongorder_count += 1;
+            last_kanji = kanji[i][0];
+          }
+        }
+      }
+    }
+    wrongorderArray.push(wrongorderHTMLElement.innerHTML);
+
+
 
     flag = false;
     timeX = 0;
@@ -8202,6 +8265,21 @@ function isValidElement(obj) {
   }
   return isElement;
 }
+
+/*
+ * Add string character count prototype.
+ * @function
+ * @param {string} c
+ * @returns number
+ */
+String.prototype.count = function(c) {
+  var result = 0, i = 0;
+  for(i; i < this.length; i++)
+    if (this[i] == c) {
+      result++;
+    }
+  return result;
+};
 
 window.addEventListener("load", function(){
   jhr_init();
