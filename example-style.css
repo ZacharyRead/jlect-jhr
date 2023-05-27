@@ -89,6 +89,12 @@ h3:first-of-type {
     color: #000;
 }
 
+@media only screen and (max-width: 400px) {
+    main {
+        padding: 0.5em;
+    }
+} 
+
 @media only screen and (max-width: 830px) {
     #canvas-table {
         display: block;
