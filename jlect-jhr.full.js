@@ -396,6 +396,7 @@ var kanji = [
   ['魚', '3HV2VHH3V22', 2],
   ['魚', 'V2VHVHH3222', 2],
   ['魚', '32V2VHH322H', 1],
+  ['魚', '3HV2VHH3222', 1],
   ['魚', 'VHV2VHH3222', 1],
   ['田', 'V2VHH', 0],
   ['田', 'V2HVH', 0],
@@ -1344,6 +1345,9 @@ var kanji = [
   ['俺', '3VH32V2HH2', 1],
   ['俺', '3VH3HVHHH2', 1],
   ['俺', '3VH32V22HH', 1],
+  ['俺', '3V33HVH332', 1],
+  ['俺', '3VH32V2HHH', 1],
+  ['俺', '3VH3HV2H3H', 1],
   ['昔', 'HVVHV2HH', 0],
   ['混', '2H3V2HHHV332', 0],
   ['混', '2H3V2HHH232', 0],
@@ -1359,6 +1363,7 @@ var kanji = [
   ['殴', 'H32V32V2', 2],
   ['帰', 'VV2HHV2V2V', 1],
   ['帰', 'VV2HHVHV2V', 1],
+  ['帰', 'VV2HHVHVHV', 2],
   ['松', 'HV3232V2', 1],
   ['訛', '2HHHV2H3V3V', 2],
   ['訛', 'HHHHV2H3V3V', 2],
@@ -1390,6 +1395,7 @@ var kanji = [
   ['計', '2HHHV2HHV', 0],
   ['計', 'HHHHV2HHV', 0],
   ['失', 'VHHV2', 0],
+  ['失', '3HHV2', 0],
   ['角', '32V2HHV', 1],
   ['角', '3232VHH', 1],
   ['麤', 'VH3VHVVHHV332VH3VHVVHHV332VH3VHVVHHV332', 0],
@@ -5331,11 +5337,13 @@ var kanji = [
   ['沚', '223HVVH', 0],
   ['圮', 'HV32H2', 1],
   ['圮', 'HVH2H2', 1],
+  ['圮', 'HVH2HH', 1],
   ['簧', '3H23H2HVVHHV2VHH32', 0],
   ['簧', '3H23H3HVVHHV2VHH32', 0],
   ['簧', '3HV3H2HVVHHV2VHH32', 0],
   ['簧', '3HV3HVHVVHHV2VHH32', 0],
   ['簧', '3HV3H3HVVHHV2VHH32', 0],
+  ['簧', '3H23H2HVVHHV2HHV32', 0],
   ['暉', 'V2HHVHHV2HHHV', 0],
   ['簹', '3H23H22V3VHV2HV2VHH', 0],
   ['簹', '3H23HV2V3VHV2HV2VHH', 0],
@@ -7278,7 +7286,7 @@ var kanji = [
  * @global
  * @type {string}
  */
-var testk = ''; // @todo: Rename this variable (it's the same thing as angles).
+var angleString = '';
 
 /**
  * @global
@@ -7642,8 +7650,8 @@ function undo() {
       line_num -= 1;
     }
 
-    if (testk) {
-      testk = testk.substring(0, testk.length - 1);
+    if (angleString) {
+      angleString = angleString.substring(0, angleString.length - 1);
     }
   }
 }
@@ -7754,7 +7762,7 @@ function erase() {
   saveRestorePoint();
   saver_count = 0;
 
-  testk = '';
+  angleString = '';
 
   // Erase timer values.
   timeX = 0;
@@ -7876,11 +7884,11 @@ function findxy(res, e) {
 
     var last_kanji = '';
 
-    testk = testk + rounded_degrees_str;
+    angleString = angleString + rounded_degrees_str;
 
     for (i = 0; i < kanji.length; i++) {
       if (last_kanji !== kanji[i][0]) {
-        if (kanji[i][1] === testk) {
+        if (kanji[i][1] === angleString) {
           guess_kanji += 1;
           if (guess_kanji === 1) {
             guessHTMLElement.innerHTML = ' ';
@@ -7900,7 +7908,7 @@ function findxy(res, e) {
             last_kanji = kanji[i][0];
           }
         }
-        else if (kanji[i][1].lastIndexOf(testk, 0) === 0 && line_num > 3) {
+        else if (kanji[i][1].lastIndexOf(angleString, 0) === 0 && line_num > 3) {
           guess_kanji += 1;
           if (guess_kanji === 1) {
             guessHTMLElement.innerHTML = " ";
@@ -7923,7 +7931,7 @@ function findxy(res, e) {
      * Number of vertical strokes (|).
      * @type {RegExpMatchArray}
      */
-    var count_v = testk.match(/V/g);
+    var count_v = angleString.match(/V/g);
     if (!count_v) {
       count_v = /** @type {RegExpMatchArray} */ [];
     }
@@ -7931,7 +7939,7 @@ function findxy(res, e) {
      * Number of horizontal strokes (―).
      * @type {RegExpMatchArray}
      */
-    var count_h = testk.match(/H/g);
+    var count_h = angleString.match(/H/g);
     if (!count_h) {
       count_h = /** @type {RegExpMatchArray} */ [];
     }
@@ -7939,7 +7947,7 @@ function findxy(res, e) {
      * Number of diagonal strokes from top-left to bottom-right (\).
      * @type {RegExpMatchArray}
      */
-    var count_tlbr = testk.match(/2/g);
+    var count_tlbr = angleString.match(/2/g);
     if (!count_tlbr) {
       count_tlbr = /** @type {RegExpMatchArray} */ [];
     }
@@ -7947,7 +7955,7 @@ function findxy(res, e) {
      * Number of diagonal strokes from bottom-left to top-right (/).
      * @type {RegExpMatchArray}
      */
-    var count_bltr = testk.match(/3/g);
+    var count_bltr = angleString.match(/3/g);
     if (!count_bltr) {
       count_bltr = /** @type {RegExpMatchArray} */ [];
     }
@@ -8032,7 +8040,7 @@ function findxy(res, e) {
 
     fuzzyArray.push(fuzzyHTMLElement.innerHTML);
 
-    //count similarity
+    // Similarity matches
     var similarityHTMLElement = document.getElementById('jhr-similarity');
     similarityHTMLElement.innerHTML = " ";
     last_kanji = '';
@@ -8045,7 +8053,7 @@ function findxy(res, e) {
         }
 
         if (last_kanji !== kanji[i][0]) {
-          if (kanji[i][1].indexOf(testk) > -1) {
+          if (kanji[i][1].indexOf(angleString) > -1) {
             similarityHTMLElement.innerHTML = similarityHTMLElement.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
             similarity_count += 1;
           }
@@ -8056,7 +8064,7 @@ function findxy(res, e) {
 
     similarityArray.push(similarityHTMLElement.innerHTML);
 
-    // Start-length guesses
+    // Start-length matches
     var slength	= document.getElementById('jhr-slength');
     slength.innerHTML = " ";
     last_kanji = '';

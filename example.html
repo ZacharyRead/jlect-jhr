@@ -10,7 +10,7 @@
   <header>
     <h1>JLect Japanese Handwriting Recognition Tool (JLect&nbsp;JHR)</h1>
   </header>
-  <main style="">
+  <main>
     <h2>Find a kanji by drawing</h2>
     <p>This page provides an example of how the JLect JHR library can be integrated onto your site.</p>
     <h2>Handwritten Kanji Search</h2>
@@ -29,18 +29,23 @@
         <h3>Partial match:</h3>
         <!-- Results based on the first three characters
         and the number of drawn strokes on the canvas. -->
-        <div id="jhr-slength"></div>
+        <div id="jhr-slength" lang="ja"></div>
 
         <h3>Fuzzy match:</h3>
-        <div id="jhr-fuzzy"></div>
+        <!-- Results based on all characters containing
+        the same number of horizontal and vertical strokes,
+        without regard to order or diagonal strokes. -->
+        <div id="jhr-fuzzy" lang="ja"></div>
 
         <h3>Similarity match:</h3>
-        <div id="jhr-similarity"></div>
+        <!-- Results based on all characters containing
+        the same set of strokes as drawn on the canvas. -->
+        <div id="jhr-similarity" lang="ja"></div>
 
         <h3>Wrong order match:</h3>
-        <!-- Results based on the characters with matching
+        <!-- Results based on the characters with exact matching
         number of stroke types, without regard to order. -->
-        <div id="jhr-wrongorder"></div>
+        <div id="jhr-wrongorder" lang="ja"></div>
       </div>
     </div>
 
@@ -58,7 +63,7 @@
     </div>
 
   </main>
-  <footer style="">
+  <footer>
     <nav>
       <a href="https://github.com/ZacharyRead/jlect-jhr">Code repository</a> |
       <a href="https://github.com/ZacharyRead/jlect-jhr#jlect-japanese-handwriting-recognition-tool-jlect-jhr">Readme</a> |
