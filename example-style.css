@@ -89,11 +89,15 @@ h3:first-of-type {
     color: #000;
 }
 
-@media only screen and (max-width: 400px) {
-    main {
-        padding: 0.5em;
+@media only screen and (max-width: 1100px) {
+    header h1 {
+        text-align: center;
+        word-wrap: balance;
     }
-} 
+    main {
+        padding: 1em 3em 2em;
+    }
+}
 
 @media only screen and (max-width: 830px) {
     #canvas-table {
@@ -113,14 +117,10 @@ h3:first-of-type {
         width: 100%;
         margin-top: 2em;
     }
-} 
+}
 
-@media only screen and (max-width: 1100px) {
-    header h1 {
-        text-align: center;
-        word-wrap: balance;
-    }
+@media only screen and (max-width: 400px) {
     main {
-        padding: 1em 3em 2em;
+        padding: 0.5em;
     }
-} 
+}
