@@ -1,57 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1">
-    <title>JLect Japanese Handwriting Recognition Tool (JLect JHR)</title>
-    <meta name="author" content="Zachary Read">
-    <link rel="stylesheet" href="example-style.css">
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1">
+  <title>JLect Japanese Handwriting Recognition Tool (JLect JHR)</title>
+  <meta name="author" content="Zachary Read">
+  <link rel="stylesheet" href="example-style.css">
 </head>
 <body>
-  <div>
+  <header>
     <h1>JLect Japanese Handwriting Recognition Tool (JLect JHR)</h1>
+  </header>
+  <main style="">
+    <h2>Find a kanji by drawing</h2>
     <p>This page provides an example of how the JLect JHR library can be integrated onto your site.</p>
     <h2>Handwritten Kanji Search</h2>
     <p>Start drawing a Japanese character in the canvas below. The tool will begin outputting matches based on stroke order.</p>
     <div id="canvas-table">
-        <div id="canvas-drawbox">
-            <div><canvas id="can" width="231" height="231"></canvas></div>
-            <div><input type="button" value="Clear" id="jhr-clear" size="23"><input type="button" value="Undo" id="jhr-undo" size="23"></div>
-        </div>
-        <div id="handwriting-results">
-            <h3>Near match:</h3>
-			<!-- Results based on all characters starting with
-			the same strokes as drawn on the canvas. -->
-            <div id="jhr-guess"></div>
+      <div id="canvas-drawbox">
+        <div><canvas id="can" width="300" height="300"></canvas></div>
+        <div><input type="button" value="Clear" id="jhr-clear" size="23"><input type="button" value="Undo" id="jhr-undo" size="23"></div>
+      </div>
+      <div id="handwriting-results">
+        <h3>Near match:</h3>
+        <!-- Results based on all characters starting with
+        the same strokes as drawn on the canvas. -->
+        <div id="jhr-guess"></div>
 
-            <h3>Partial match:</h3>
-			<!-- Results based on the first three characters
-			and the number of drawn strokes on the canvas. -->
-            <div id="jhr-slength"></div>
+        <h3>Partial match:</h3>
+        <!-- Results based on the first three characters
+        and the number of drawn strokes on the canvas. -->
+        <div id="jhr-slength"></div>
 
-            <h3>Fuzzy match:</h3>
-            <div id="jhr-fuzzy"></div>
+        <h3>Fuzzy match:</h3>
+        <div id="jhr-fuzzy"></div>
 
-            <h3>Similarity match:</h3>
-            <div id="jhr-similarity"></div>
-        </div>
+        <h3>Similarity match:</h3>
+        <div id="jhr-similarity"></div>
+      </div>
     </div>
 
     <div>
-        <h2>Supplemental data</h2>
-        <div>Angles: <span id="jhr-angles"></span></div>
-        <div>Direction: <span id="jhr-direction"></span></div>
-        <div>Overlap: <span id="jhr-overlap"></span></div>
-        <div>Saver: <span id="jhr-saver"></span></div>
+      <h2>Supplemental data</h2>
+      <div>Angles: <span id="jhr-angles"></span></div>
+      <div>Direction: <span id="jhr-direction"></span></div>
+      <div>Overlap: <span id="jhr-overlap"></span></div>
+      <div>Saver: <span id="jhr-saver"></span></div>
     </div>
 
     <div>
-        <h2>Code repository</h2>
-        <p><a href="https://github.com/ZacharyRead/jlect-jhr">Check out the repository on Github!</a></p>
+      <h2>Code repository</h2>
+      <p><a href="https://github.com/ZacharyRead/jlect-jhr">Check out the repository on Github!</a></p>
     </div>
 
-  </div>
-
-  <script charset="UTF-8" src="jlect-jhr.full.js?20230525-0054"></script>
+  </main>
+  <footer style="">
+    <nav>
+      <a href="https://github.com/ZacharyRead/jlect-jhr">Code Repository</a> |
+      <a href="https://github.com/ZacharyRead/jlect-jhr#jlect-japanese-handwriting-recognition-tool-jlect-jhr">Readme</a> |
+      <a href="https://github.com/ZacharyRead/jlect-jhr#license">License</a> |
+      <a href="https://github.com/ZacharyRead/jlect-jhr/issues">Issue tracker</a>
+    </nav>
+  </footer>
+  <script charset="UTF-8" src="jlect-jhr.full.js?20230526-2228"></script>
 </body>
 </html>

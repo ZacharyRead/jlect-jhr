@@ -3,12 +3,24 @@ body {
     font-size: 100%;
     line-height: 1.8em;
 }
-body > div {
+header {
+    margin: 0 auto;
     max-width: 1000px;
-    margin-right: auto;
-    margin-left: auto;
+}
+main {
+    padding: 1em;
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 2em 8em 4em;
+    border: 2px dashed lightgray;
+}
+footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
     padding: 1em;
 }
+
 #canvas-table {
     display: table;
     width: 80%;
@@ -17,19 +29,23 @@ body > div {
 }
 #canvas-drawbox {
     display: table-cell;
-    min-width: 231px;
+    min-width: 300px;
     vertical-align: top;
     width: 30%;
 }
 canvas {
     border: 1px solid #000;
-	touch-action: none;
+    touch-action: none;
 }
 #handwriting-results {
     display: table-cell;
     padding-left: 30px;
     vertical-align: top;
     width: 70%;
+}
+
+h2 {
+    margin-top: 1.3em;
 }
 h3 {
     border-bottom: 1px solid #000;
@@ -39,6 +55,7 @@ h3 {
 h3:first-of-type {
     margin-top: 0;
 }
+
 .kmatch {
     background: rgba(255, 255, 255, 0.7) none repeat scroll 0 0;
     color: #000;
@@ -54,3 +71,45 @@ h3:first-of-type {
 #jhr-undo {
     margin-left: 15px;
 }
+#jhr-clear,
+#jhr-undo {
+    border: none;
+    line-height: 2em;
+    font-weight: bold;
+    background-color: #222;
+    color: white;
+    padding: 3px 10px;
+    cursor: pointer;
+}
+#jhr-clear:hover,
+#jhr-clear:focus,
+#jhr-undo:hover,
+#jhr-undo:focus {
+    background-color: #ddd;
+    color: #fff;
+}
+
+@media only screen and (max-width: 830px) {
+    #canvas-drawbox {
+		display: block;
+		margin: 0 auto;
+		width: fit-content;
+	}
+	
+	#handwriting-results {
+		padding-left: 30px;
+		display: block;
+		width: 100%;
+		margin-top: 2em;
+	}
+} 
+
+@media only screen and (max-width: 1100px) {
+	header h1 {
+		text-align: center;
+		word-wrap: balance;
+	}
+    main {
+        padding: 1em 3em 2em;
+    }
+} 
