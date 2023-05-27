@@ -29,7 +29,7 @@ footer {
 }
 #canvas-drawbox {
     display: table-cell;
-    min-width: 300px;
+    min-width: 301px;
     vertical-align: top;
     width: 30%;
 }
@@ -82,33 +82,38 @@ h3:first-of-type {
     cursor: pointer;
 }
 #jhr-clear:hover,
-#jhr-clear:focus,
+#jhr-clear:active,
 #jhr-undo:hover,
-#jhr-undo:focus {
+#jhr-undo:active {
     background-color: #ddd;
-    color: #fff;
+    color: #000;
 }
 
 @media only screen and (max-width: 830px) {
+    #canvas-table {
+        display: block;
+        width: 100%;
+    }
+    
     #canvas-drawbox {
-		display: block;
-		margin: 0 auto;
-		width: fit-content;
-	}
-	
-	#handwriting-results {
-		padding-left: 30px;
-		display: block;
-		width: 100%;
-		margin-top: 2em;
-	}
+        display: block;
+        margin: 0 auto;
+        width: fit-content;
+    }
+    
+    #handwriting-results {
+        padding-left: 0;
+        display: block;
+        width: 100%;
+        margin-top: 2em;
+    }
 } 
 
 @media only screen and (max-width: 1100px) {
-	header h1 {
-		text-align: center;
-		word-wrap: balance;
-	}
+    header h1 {
+        text-align: center;
+        word-wrap: balance;
+    }
     main {
         padding: 1em 3em 2em;
     }
