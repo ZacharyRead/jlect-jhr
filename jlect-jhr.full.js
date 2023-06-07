@@ -7609,7 +7609,7 @@ function saveRestorePoint() {
  * Generates a random CJK character.
  * @returns {undefined}
  */
-function generaterandomcjkButton() {
+function generaterandomcjk() {
   var randomcjkHTMLElement = document.getElementById('jhr-random-cjk');
   var randomKanji = String.fromCharCode(0x9faf + Math.random() * (0x4e00-0x9faf+1));
   for (i = 0; i < kanji.length; i++) {

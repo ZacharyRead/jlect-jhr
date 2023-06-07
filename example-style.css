@@ -91,6 +91,9 @@ h3:first-of-type {
     background-color: #ddd;
     color: #000;
 }
+#jhr-generate-random-cjk {
+    margin-top: 3em;
+}
 #jhr-random-cjk {
     font-size: 7em;
     line-height: 1em;
