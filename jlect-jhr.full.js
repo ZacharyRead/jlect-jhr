@@ -1854,6 +1854,8 @@ var kanji = [
   ['雋', '3VVHVHHHV2HV2', 0],
   ['雋', '3V3HVHHHV2HV2', 0],
   ['倭', '3VHHV3223H', 1],
+  ['倭', '3V3HV3223H', 1],
+  ['倭', '3V3HV32V3H', 1],
   ['任', '3V3HVH', 0],
   ['任', '3VHHVH', 0],
   ['恁', '3V3HVH3H22', 0],
@@ -6198,6 +6200,10 @@ var kanji = [
   ['漆', '223VH3H32V2332', 0],
   ['漆', '223HV3H32V2332', 0],
   ['質', '3VHV3VHVV2HHH32', 1],
+  ['質', 'HVHVH3HVV2HHH32', 0],
+  ['質', 'HVHVHVHVV2HHH32', 0],
+  ['質', '3HV3HVV2HHH32', 0],
+  ['質', 'H3HVHVHVV2HHH32', 0],
   ['壘', 'V2VHHV2VHHV2VHHHVH', 0],
   ['壘', 'V2HVHV2HVHV2HVHHVH', 0],
   ['累', 'VHVHHVV2V32', 2],
@@ -6958,6 +6964,7 @@ var kanji = [
   ['閲', 'V2HHVVHH23VHH32', 1],
   ['閲', 'V2HH23VHH32VVHH', 1],
   ['閲', 'V2HHVVHH23V2H3H', 1],
+  ['閲', 'V2HHV2HHH3V2H32', 1],
   ['越', 'VHV32HHVHHVH', 0],
   ['越', 'HV232HHVH3H', 0],
   ['越', 'HHVH3H2H232', 0],
@@ -7221,6 +7228,13 @@ var kanji = [
   ['嚙', 'V2HVHVH3H3HH32322V', 0],
   ['嗼', 'V2HHVVV2HHH32', 0],
   ['朋', 'VVHHV2HH', 0],
+  ['朋', 'V2HHVVHH', 0],
+  ['朋', 'VVHHVVHH', 0],
+  ['朋', 'V2HHV2HH', 0],
+  ['朋', 'V2HHV2HH', 0],
+  ['朋', '3VHHVVHH', 0],
+  ['朋', '3VHHV2HH', 0],
+  ['朋', '3VHH32HH', 0],
   ['昌', 'V2HHVHHH', 0],
   ['填', 'HVHHVV2HHHH32', 0],
   ['桂', 'HV32HVHHVH', 0],
@@ -7260,6 +7274,30 @@ var kanji = [
   ['烏', '32HVH2V22H', 0],
   ['蔦', 'HVV32HHVH2322H', 0],
   ['鳩', '2V32HHVH232H2', 4],
+  ['勷', 'VHV2HV2HHHVVH32322V', 1],
+  ['偟', '3V3V2HHHHVH', 0],
+  ['偟', '3V3V2HHHVHH', 0],
+  ['嘓', 'V2HV2HV2HHV32', 0],
+  ['鏓', '32HHV23H3V23V2H3222', 2],
+  ['悤', '3V2VV2H3222', 2],
+  ['僯', '3VV3HV323V2HVHV', 1],
+  ['頠', '32HV22H3V2HHH32', 3],
+  ['斫', 'H3V2HHVHV', 1],
+  ['筬', '3H23H2HVV232', 0],
+  ['筬', '3H23H2HV2V32', 0],
+  ['筬', '3H23H3HVV232', 0],
+  ['杕', 'HVVHHV2', 0],
+  ['絅', 'VV2V32V2V2H', 2],
+  ['阯', '2VVVHVH', 2],
+  ['阯', 'VVVHVH', 2],
+  ['罸', 'VHVVH2HHHV2HHV2', 0],
+  ['罸', 'VHVVHHHHHV2HHV2', 0],
+  ['嫟', 'VVHH2HVVH3VHH', 2],
+  ['嫟', 'HV3HHVVH3V2H2', 2],
+  ['嫟', 'HV3H2HVVH3V2H', 2],
+  ['鈶', '32HHV23HV2V2H', 1],
+  ['鈶', '32HHV233V2V2H', 1],
+  ['', '', 0],
   ['', '', 0],
   ['', '', 0],
   ['', '', 0],
@@ -7456,6 +7494,17 @@ function jhr_init() {
     }, false);
   }
 
+  /**
+   * The generate random kanji button, defined by an HTML element with the id "jhr-generate-random-cjk".
+   * @type {HTMLElement}
+   */
+  var generaterandomcjkButton = document.getElementById('jhr-generate-random-cjk');
+  if (isValidElement(generaterandomcjkButton)) {
+    generaterandomcjkButton.addEventListener('click', function () {
+      generaterandomcjk();
+    }, false);
+  }
+
   setInterval(function () {
     directionalChangeTimer()
   }, 100);
@@ -7554,6 +7603,21 @@ var restorePoints = [];
 function saveRestorePoint() {
   var imgSrc = canvas.toDataURL('image/png', 1.0);
   restorePoints.push(imgSrc);
+}
+
+/**
+ * Generates a random CJK character.
+ * @returns {undefined}
+ */
+function generaterandomcjkButton() {
+  var randomcjkHTMLElement = document.getElementById('jhr-random-cjk');
+  var randomKanji = String.fromCharCode(0x9faf + Math.random() * (0x4e00-0x9faf+1));
+  for (i = 0; i < kanji.length; i++) {
+    if (kanji[i][0] == randomKanji) {
+      randomKanji = randomKanji + ' ✅';
+    }
+  }
+  randomcjkHTMLElement.innerHTML = randomKanji;
 }
 
 /**

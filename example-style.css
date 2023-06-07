@@ -72,7 +72,8 @@ h3:first-of-type {
     margin-left: 15px;
 }
 #jhr-clear,
-#jhr-undo {
+#jhr-undo,
+#jhr-generate-random-cjk {
     border: none;
     line-height: 2em;
     font-weight: bold;
@@ -84,9 +85,15 @@ h3:first-of-type {
 #jhr-clear:hover,
 #jhr-clear:active,
 #jhr-undo:hover,
-#jhr-undo:active {
+#jhr-undo:active,
+#jhr-generate-random-cjk:hover,
+#jhr-generate-random-cjk:active {
     background-color: #ddd;
     color: #000;
+}
+#jhr-random-cjk {
+    font-size: 7em;
+    line-height: 1em;
 }
 
 @media only screen and (max-width: 1100px) {
