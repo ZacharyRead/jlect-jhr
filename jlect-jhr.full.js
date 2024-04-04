@@ -8074,7 +8074,7 @@ function generaterandomcjk() {
   // Display Kanji from existing list without stroke order
   for (i = 0; i < kanji.length; i++) {
     if (kanji[i][0] && !kanji[i][1]) {
-      randomcjkHTMLElement.innerHTML = randomKanji;
+      randomcjkHTMLElement.innerHTML = kanji[i][0];
       return;
     }
   }
