@@ -8069,6 +8069,15 @@ function saveRestorePoint() {
  * @returns {undefined}
  */
 function generaterandomcjk() {
+  // Display Kanji from existing list without stroke order
+  for (i = 0; i < kanji.length; i++) {
+    if (kanji[i][0] && !kanji[i][1]) {
+      randomcjkHTMLElement.innerHTML = randomKanji;
+      return;
+    }
+  }
+
+  // Else, give us a random CJK
   var randomcjkHTMLElement = document.getElementById('jhr-random-cjk');
   var randomKanji = String.fromCharCode(0x9faf + Math.random() * (0x4e00-0x9faf+1));
   for (i = 0; i < kanji.length; i++) {
