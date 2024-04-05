@@ -8430,6 +8430,7 @@ function generaterandomcjk() {
   if (randomKanjiList.length > 0) {
     const randomKanjiNumber = Math.floor(Math.random() * randomKanjiList.length);
     randomcjkHTMLElement.innerHTML = randomKanjiList[randomKanjiNumber];
+    return;
   }
 
   // Else, give us a random CJK
