@@ -82,10 +82,13 @@ h3:first-of-type {
     cursor: pointer;
 }
 #jhr-clear:hover,
+#jhr-clear:focus,
 #jhr-clear:active,
 #jhr-undo:hover,
+#jhr-undo:focus,
 #jhr-undo:active,
 #jhr-generate-random-cjk:hover,
+#jhr-generate-random-cjk:focus,
 #jhr-generate-random-cjk:active {
     background-color: #ddd;
     color: #000;
