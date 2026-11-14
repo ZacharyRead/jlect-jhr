@@ -8684,7 +8684,7 @@ var kanji = [
   ['掌', '', 0],
   ['勝', '', 0],
   ['訟', '', 0],
-  ['称', '', 0],
+  ['称', '3HV323HV32', 0],
   ['祥', '', 0],
   ['消', '', 0],
   ['宵', '', 0],
@@ -8695,7 +8695,7 @@ var kanji = [
   ['遵', '', 0],
   ['潤', '', 0],
   ['熟', '', 0],
-  ['縮', '', 0],
+  ['縮', 'VV2V32VVH3VH3V2HH', 3],
   ['粛', '', 0],
   ['淑', '', 0],
   ['祝', '', 0],
@@ -8708,6 +8708,50 @@ var kanji = [
   ['宗', '', 0],
   ['授', '', 0],
   ['呪', '', 0],
+  ['寂', '', 0],
+  ['爵', '', 0],
+  ['酌', '', 0],
+  ['善', '', 0],
+  ['製', '', 0],
+  ['増', '', 0],
+  ['協', '', 0],
+  ['鉄', '', 0],
+  ['都', '', 0],
+  ['球', '', 0],
+  ['監', '', 0],
+  ['歓', '', 0],
+  ['歡', '', 0],
+  ['艷', '', 0],
+  ['毀', '', 0],
+  ['嗅', '', 0],
+  ['惧', '', 0],
+  ['腫', '', 0],
+  ['芯', '', 0],
+  ['腎', '', 0],
+  ['煎', '', 0],
+  ['羨', '', 0],
+  ['詮', '', 0],
+  ['䇳', '', 0],
+  ['箋', '', 0],
+  ['遡', '', 0],
+  ['曽', '', 0],
+  ['捉', '', 0],
+  ['汰', '', 0],
+  ['堆', '', 0],
+  ['綻', '', 0],
+  ['緻', '', 0],
+  ['酎', '', 0],
+  ['貼', '', 0],
+  ['嘲', '', 0],
+  ['捗', '', 0],
+  ['椎', '', 0],
+  ['溺', '', 0],
+  ['賭', '', 0],
+  ['', '', 0],
+  ['', '', 0],
+  ['', '', 0],
+  ['', '', 0],
+  ['', '', 0],
   ['', '', 0],
   ['', '', 0],
   ['', '', 0],
@@ -8718,8 +8762,8 @@ var kanji = [
 
 /**
  * To count the number of unique characters in the above set, run the following
- * in the Developer console (F12). Last checked, there were 3445+ unique
- * characters, out of 8448+ total entries. 0 characters are still missing data.
+ * in the Developer console (F12). Last checked, there were 3566+ unique
+ * characters, out of 8700+ total entries.
  *
  * var kanji_col1 = kanji.map(function(value,index) { return value[0]; });
  * var unique = [...new Set(kanji_col1)];
@@ -9030,7 +9074,7 @@ function generaterandomcjk() {
   }
   if (randomKanjiList.length > 0) {
     const randomKanjiNumber = Math.floor(Math.random() * randomKanjiList.length);
-    randomcjkHTMLElement.innerHTML = randomKanjiList[randomKanjiNumber];
+    randomcjkHTMLElement.innerHTML = randomKanjiList[randomKanjiNumber]  + ' ⚠️';
     return;
   }
 
