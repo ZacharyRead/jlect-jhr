@@ -627,6 +627,7 @@ var kanji = [
   ['丙', 'HV232', 1],
   ['丙', 'H32V2', 0],
   ['他', '3VHV2', 2],
+  ['他', '3VHVV', 2],
   ['令', '32H2V', 0],
   ['令', '32HHV', 0],
   ['令', '32222', 0],
@@ -1040,6 +1041,7 @@ var kanji = [
   ['府', 'VHV3VHV2', 0],
   ['府', 'VH33VHVH', 0],
   ['府', 'V33VHV2', 2],
+  ['府', '3H33VH32', 2],
   ['歩', 'HVVHV3H3', 0],
   ['歩', 'HVVH323', 0],
   ['歩', 'HVVH3H33', 0],
@@ -1517,6 +1519,7 @@ var kanji = [
   ['事', 'H2HHHHV', 0],
   ['事', 'HV2HHHHV', 0],
   ['事', 'HVHH2HHV', 0],
+  ['事', 'HVHHHHHV', 0],
   ['謙', '2HHHV2H23H2HHVV32', 1],
   ['謙', 'HHHHV2H23H2HHVV32', 1],
   ['音', 'VH23HV2HH', 0],
@@ -2352,6 +2355,7 @@ var kanji = [
   ['亀', '3HVHHHVHHH2', 0],
   ['材', 'HV32HV3', 0],
   ['材', 'HV3HHV3', 0],
+  ['材', 'HV32H33', 0],
   ['短', '3HHV2HV2HVVH', 0],
   ['短', '3HHV2HVHH23H', 0],
   ['短', '3HH32HV2H23H', 0],
@@ -2696,6 +2700,7 @@ var kanji = [
   ['棒', 'HVV2HHHV2HHV', 0],
   ['棒', 'HV32HHH32VHH', 0],
   ['棒', 'HV32HHH32HVH', 0],
+  ['棒', 'HV323HHH323H', 0],
   ['鬼', '3V2VHH32V2', 1],
   ['鬼', 'VV2VHH32V2', 1],
   ['鬼', '3VHVHH3222', 1],
@@ -5092,6 +5097,7 @@ var kanji = [
   ['悩', '32V2223322V', 0],
   ['悩', '3V22223322V', 0],
   ['費', 'HH2VVV2HHH3H', 2],
+  ['費', 'HVHHV3VVHH32', 2],
   ['穂', '3HV3HHV2HVH3222', 1],
   ['穂', '3HV32HVV2HH3222', 1],
   ['憎', 'VVV23V2VHHV2HH', 0],
@@ -6498,6 +6504,7 @@ var kanji = [
   ['覧', 'HVV2HVH3HHV2HHH32', 2],
   ['覽', 'HVV2HVH3HHV2VVHV2HHH32', 0],
   ['亂', 'H322HHV222V2V', 4],
+  ['亂', '33V2232VHV22V', 4],
   ['辣', 'VH23H3VHVHHV32', 0],
   ['辣', 'VH23HHVHVHHV32', 0],
   ['絡', 'VVVV3H3V2V2H', 3],
@@ -6875,6 +6882,7 @@ var kanji = [
   ['暗', 'V2HHVH23HV2HH', 0],
   ['暗', 'V2HHVHVVHV2HH', 0],
   ['貌', '3223V333VHHH32', 1],
+  ['貌', '3233323VHH332V', 1],
   ['暴', 'VHHHHHV2V233H', 1],
   ['頰', 'HV23232H3V2HHH32', 0],
   ['頰', 'H32VHVVHVV2HHH32', 0],
@@ -6942,6 +6950,8 @@ var kanji = [
   ['闇', 'V2HHV2HHVH23HV2HH', 0],
   ['喩', 'V2HV2HV22HVV', 3],
   ['愉', 'VV232HV2HHVV', 1],
+  ['愉', '3V3HH323HVVV', 1],
+  ['愉', '32V32HV2HHVV', 1],
   ['往', '33V2HVHH', 0],
   ['往', '33V2HHVH', 0],
   ['往', 'HHVVHVHH', 0],
@@ -6988,6 +6998,7 @@ var kanji = [
   ['實', 'VVHV2VHHV2HHH32', 0],
   ['寫', 'VVH3H2HH32322H', 0],
   ['寫', 'VVH3H2HH323222', 0],
+  ['寫', 'VVH3VH2HH32322H', 0],
   ['楷', 'HV3HH2323V2HH', 0],
   ['楷', 'HV3232323V2HH', 0],
   ['社', 'HHVVVHVH', 0],
@@ -7032,18 +7043,28 @@ var kanji = [
   ['涉', '223HVVHV33', 0],
   ['燒', '33V2HVHHVHHVHH32', 0],
   ['燒', '23V2HVHHVHHVHH32', 0],
+  ['燒', '3232HVHHHVHHHH2V', 0],
+  ['燒', '32V2HVHHVHHVHH32', 0],
   ['證', '2HHHV2HV2332HV2H23H', 0],
+  ['證', '3HHHVHH3232H3H32H', 0],
   ['奬', '2HVV3V22HV2H32', 4],
   ['奬', 'V2H33V22HV2H32', 2],
   ['奬', 'VVHV3V22HV2H32', 3],
-  ['條', '3VV3V2HV32', 0],
+  ['奬', 'VHH332H32H32H2', 0],
+  ['條', '3VV3V2HV32', 1],
+  ['條', '3VV323HV32', 1],
   ['狀', 'VHVHVH2VH', 0],
   ['乘', '3HVHV33232', 1],
   ['乘', '3HHV332V32', 1],
+  ['乘', '3HHVHH3232', 0],
+  ['乘', '3HVH332V32', 1],
+  ['乘', 'HHVH332V32', 1],
   ['淨', '22333222HHV', 0],
   ['淨', '22VH3222HHV', 0],
   ['淨', '22332222HHV', 0],
   ['剩', '3HVHV33232VV', 0],
+  ['剩', '3HHV332V32VV', 0],
+  ['剩', '3HHVHH3232VV', 0],
   ['剩', '3HHV332V32VV', 0],
   ['疊', 'V2VHHV2VHHV2VHHVHV2HHH', 0],
   ['繩', 'VV2V32V2HH32H2HHVV', 3],
@@ -7082,6 +7103,7 @@ var kanji = [
   ['萎', 'HVVHHV32V3H', 1],
   ['靜', 'HVHHV2VHH3222HHV', 0],
   ['竊', 'VVH32323HV32HVV232V2V2', 2],
+  ['竊', '32H32323HV3232HV323VV2', 2],
   ['骸', 'V2VHVHV2HHVH333V', 0],
   ['垣', 'HVHHV2HHH', 0],
   ['垣', 'HV3HV2HHH', 0],
@@ -7578,6 +7600,10 @@ var kanji = [
   ['蝶', 'VHHV32VVHH2HV32', 0],
   ['蝶', 'VHHV32HVVH2HV32', 0],
   ['蝶', 'V2V32HVVH2HV32', 0],
+  ['蝶', 'V2HVH2HVVH2HV32', 0],
+  ['蝶', 'V2HVH2HV22HV32', 0],
+  ['蝶', 'V2HV32HV22HV32', 0],
+  ['蝶', 'VHHVH2HV22HV32', 0],
   ['笠', '3H23H2VH23H', 0],
   ['笠', '3H23H3VH23H', 0],
   ['笹', '3H23H2HVVH2', 0],
@@ -8548,6 +8574,57 @@ var kanji = [
   ['媬', 'VVH3VVHHHV32', 1],
   ['耏', 'H3V2VVH333', 1],
   ['凂', '233HVHH32', 2],
+  ['渉', '223VHVHV323', 0],
+  ['渉', '223VHVHV32H', 0],
+  ['軖', 'HV2HHHVHVHH', 0],
+  ['菖', 'HVVV2HHV2HH', 0],
+  ['隋', 'VVVH3HVHV2HH', 2],
+  ['隋', 'VVH3HVHV2HH', 3],
+  ['浚', '2H3223H3V2', 2],
+  ['浚', '223223H3V2', 2],
+  ['浚', '22V223H3V2', 2],
+  ['棋', 'HV32HVVHHH32', 0],
+  ['胖', 'V2HH32HHV', 0],
+  ['胖', '3VVHH3H3V', 0],
+  ['胖', 'VVHH3V2HHV', 0],
+  ['墜', 'VVV23H3VH332HVH', 3],
+  ['墜', '2VHV33HV33HHHVH', 3],
+  ['墜', 'VV23H3V3332HVH', 4],
+  ['享', 'VHVHH2VH', 2],
+  ['享', '3HVHH2VH', 2],
+  ['亭', 'VHVHH2HVV', 0],
+  ['亭', '3HVHH2HVV', 0],
+  ['侵', '3V2HHVHV2', 0],
+  ['侵', '3VHVH2322', 0],
+  ['促', '3VV2HVH32', 0],
+  ['促', '3VVHHVHH2', 0],
+  ['俊', '3VV2323V2', 2],
+  ['俊', '3V2323332', 2],
+  ['偵', '3VHVV2HHH32', 0],
+  ['偵', '3VHVHVHHH32', 0],
+  ['偶', '3VV2HHVV2H2', 0],
+  ['偶', '3VVHHVHVH32', 0],
+  ['偽', '3V23HH22222', 2],
+  ['偽', '3V332V33222', 2],
+  ['僅', '3VHHVVHHHHHVH', 0],
+  ['僅', '3VHVVHVHHHHVH', 0],
+  ['僅', '3VHVVHV2HVHHH', 0],
+  ['僧', '3V32VHVHHVHHH', 0],
+  ['僧', '3V23V2VHHV2HH', 0],
+  ['儀', '3V32HHVH2HHV323', 0],
+  ['儀', '3V23HHVH3HV223', 0],
+  ['儀', '3V23HHVH3HV2H23', 0],
+  ['凄', '32HVHHV3H2', 1],
+  ['凄', '23H2VHHV3H', 1],
+  ['准', '3232HHHVHH', 0],
+  ['准', '233V3HVHHH', 0],
+  ['准', '233V3HHHVH', 0],
+  ['剰', '3HVHH3232VV', 0],
+  ['剰', '3HHVVHV32VV', 0],
+  ['剰', '3V2HHV32VV', 0],
+  ['勅', 'HV2HV322V', 1],
+  ['勅', 'HVHH3232V', 1],
+  ['頬', 'H23HV2H3V2HHH32', 0],
   ['', '', 0],
   ['', '', 0],
   ['', '', 0],
@@ -8770,17 +8847,17 @@ function getTouchPos(canvasDom, touchEvent) {
 
 // Prevent scrolling when touching the canvas.
 document.body.addEventListener("touchstart", function (e) {
-  if (e.target == canvas) {
+  if (e.target === canvas) {
     e.preventDefault();
   }
 }, {passive: false});
 document.body.addEventListener("touchend", function (e) {
-  if (e.target == canvas) {
+  if (e.target === canvas) {
     e.preventDefault();
   }
 }, {passive: false});
 document.body.addEventListener("touchmove", function (e) {
-  if (e.target == canvas) {
+  if (e.target === canvas) {
     e.preventDefault();
   }
 }, {passive: false});
@@ -8824,6 +8901,7 @@ var wrongorderArray = [''];
 var timeX = 0;
 var timeY = 0;
 var direction = 0;
+var test_dir = 0;
 var dir_count = 0;
 
 // Overlap counter
@@ -8874,7 +8952,7 @@ function generaterandomcjk() {
   // Else, give us a random CJK
   var randomKanji = String.fromCharCode(0x9faf + Math.random() * (0x4e00-0x9faf+1));
   for (i = 0; i < kanji.length; i++) {
-    if (kanji[i][0] == randomKanji) {
+    if (kanji[i][0] === randomKanji) {
       randomKanji = randomKanji + ' ✅';
     }
   }
@@ -9401,7 +9479,7 @@ function findxy(res, e) {
           break;
         }
         if ((typeof anglesArray[3] !== 'undefined')) {
-          if ((kanji[i][1].length == (anglesArray.length - 1)) && (kanji[i][1].startsWith(anglesArray[3]) == true)) {
+          if ((kanji[i][1].length === (anglesArray.length - 1)) && (kanji[i][1].startsWith(anglesArray[3]) === true)) {
             if (last_kanji !== kanji[i][0]) {
               slength.innerHTML = slength.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
               slength_count += 1;
@@ -9420,7 +9498,7 @@ function findxy(res, e) {
         if (slength_count > 16) {
           break;
         }
-        if ((kanji[i][1].length == (anglesArray.length - 1)) && (kanji[i][1].startsWith(anglesArray[4]) == true)) {
+        if ((kanji[i][1].length === (anglesArray.length - 1)) && (kanji[i][1].startsWith(anglesArray[4]) === true)) {
           if (last_kanji !== kanji[i][0]) {
             slength.innerHTML = slength.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
             slength_count += 1;
@@ -9458,10 +9536,10 @@ function findxy(res, e) {
             'd3' : kanji[i][1].count('3')
           };
 
-          if (wo_lastitem_count.h == wo_currentitem_count.h &&
-              wo_lastitem_count.v == wo_currentitem_count.v &&
-              wo_lastitem_count.d2 == wo_currentitem_count.d2 &&
-              wo_lastitem_count.d3 == wo_currentitem_count.d3) {
+          if (wo_lastitem_count.h === wo_currentitem_count.h &&
+              wo_lastitem_count.v === wo_currentitem_count.v &&
+              wo_lastitem_count.d2 === wo_currentitem_count.d2 &&
+              wo_lastitem_count.d3 === wo_currentitem_count.d3) {
             wrongorderHTMLElement.innerHTML = wrongorderHTMLElement.innerHTML + '<a class="kmatch">' + kanji[i][0] + '</a>';
             wrongorder_count += 1;
             last_kanji = kanji[i][0];
@@ -9587,7 +9665,7 @@ function isValidElement(obj) {
   if (!obj) {
     return false;
   }
-  var isElement = false;
+  let isElement;
   try {
     // For modern browsers.
     isElement = obj instanceof HTMLElement;
@@ -9599,7 +9677,7 @@ function isValidElement(obj) {
   return isElement;
 }
 
-/*
+/**
  * Add string character count prototype.
  * @function
  * @param {string} c
@@ -9608,7 +9686,7 @@ function isValidElement(obj) {
 String.prototype.count = function(c) {
   var result = 0, i = 0;
   for(i; i < this.length; i++)
-    if (this[i] == c) {
+    if (this[i] === c) {
       result++;
     }
   return result;
